@@ -5,3 +5,5 @@
 *.war
 *.ear
 /guiLuggage/nbproject/private/
+/guiLuggage/build/
+/guiLuggage/dist/
