@@ -4,6 +4,8 @@
  */
 package guiluggage;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author sean
@@ -184,10 +186,11 @@ public class MainGuiFrame extends java.awt.Frame {
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(jScrollPane3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(addNewButton1)
-                    .add(moreButton)
-                    .add(addNewButton2))
+                    .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                        .add(moreButton)
+                        .add(addNewButton2)))
                 .addContainerGap(34, Short.MAX_VALUE))
         );
 
@@ -244,7 +247,9 @@ public class MainGuiFrame extends java.awt.Frame {
     }//GEN-LAST:event_logoutButtonMouseClicked
 
     private void appManagementButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appManagementButtonMouseClicked
-        // TODO add your handling code here:
+        Overlay overlay = new Overlay();
+        JFrame frame = overlay.overlays();
+        frame.setVisible(true);
     }//GEN-LAST:event_appManagementButtonMouseClicked
 
     /**
