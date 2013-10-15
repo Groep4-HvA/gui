@@ -4,3 +4,4 @@
 *.jar
 *.war
 *.ear
+/guiLuggage/nbproject/private/
