@@ -6,7 +6,7 @@ package guiluggage;
 
 /**
  *
- * @author sean
+ * @author groep 4
  */
 public class GuiLuggage {
 
