@@ -28,9 +28,8 @@ public class GuiLuggage {
         MainGuiFrame main = new MainGuiFrame();
         currentLocale = new Locale(language, country);
                 
-        messages = ResourceBundle.getBundle("translation", currentLocale);
-        //main.setName(messages.getString("greetings"));
-        System.out.print(messages.getString("greetings"));
+//      messages = ResourceBundle.getBundle("translation", currentLocale);
+//      main.setName(messages.getString("greetings"));
         main.setVisible(true);
         
     }
