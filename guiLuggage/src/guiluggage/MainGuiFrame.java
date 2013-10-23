@@ -247,9 +247,10 @@ public class MainGuiFrame extends java.awt.Frame {
     }//GEN-LAST:event_logoutButtonMouseClicked
 
     private void appManagementButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appManagementButtonMouseClicked
-        Overlay overlay = new Overlay();
+        /*Overlay overlay = new Overlay();
         JFrame frame = overlay.overlays();
-        frame.setVisible(true);
+        frame.setVisible(true);*/
+        this.setVisible(false);
     }//GEN-LAST:event_appManagementButtonMouseClicked
 
     /**
@@ -259,6 +260,7 @@ public class MainGuiFrame extends java.awt.Frame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MainGuiFrame().setVisible(true);
+                
             }
         });
     }
