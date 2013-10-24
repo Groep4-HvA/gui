@@ -136,18 +136,25 @@
         </Component>
         <Component class="javax.swing.JButton" name="addNewButton1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Add new"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Add new: &quot; + button1" type="code"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="addNewButton1MouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clickedButton1"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="addNewButton2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Add new"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Add new: &quot;+ button2" type="code"/>
+            </Property>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="addNewButton2MouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clickedButton2"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="moreButton">

@@ -15,10 +15,22 @@ public class MainGuiFrame extends java.awt.Frame {
     /**
      * Creates new form MainGuiFrame
      */
+    public String t = "mederker";
+    public String button1;
+    public String button2;
+    
     public MainGuiFrame() {
+        if (t=="medewerker"){
+            button1 = "Medewerker";
+            button2 = "Manager";
+        }else{
+            button1 = "Luggage";
+            button2 = "Passenger";
+        }
+        
+        
         initComponents();
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -72,17 +84,28 @@ public class MainGuiFrame extends java.awt.Frame {
             }
         });
 
-        addNewButton1.setText("Add new");
+        addNewButton1.setText("Add new: " + button1);
         addNewButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 addNewButton1MouseClicked(evt);
             }
         });
+        addNewButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clickedButton1(evt);
+            }
+        });
 
-        addNewButton2.setText("Add new");
+        addNewButton2.setText("Add new: "+ button2);
+        addNewButton2.setToolTipText("");
         addNewButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 addNewButton2MouseClicked(evt);
+            }
+        });
+        addNewButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clickedButton2(evt);
             }
         });
 
@@ -247,11 +270,38 @@ public class MainGuiFrame extends java.awt.Frame {
     }//GEN-LAST:event_logoutButtonMouseClicked
 
     private void appManagementButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appManagementButtonMouseClicked
-        /*Overlay overlay = new Overlay();
-        JFrame frame = overlay.overlays();
-        frame.setVisible(true);*/
-        this.setVisible(false);
+        if(t == "medewerker"){
+            t = "Application Management";
+            addNewButton1.setText("Add new: " + button1);
+            addNewButton2.setText("Add new: " + button2);
+            appManagementButton.setText("Application Management");
+        }else{
+            t = "medewerker";
+            appManagementButton.setText("Overzicht");
+        addNewButton1.setText("Add new: Manager");
+        addNewButton2.setText("Add new: Medewerker");
+        }
     }//GEN-LAST:event_appManagementButtonMouseClicked
+
+    private void clickedButton2(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clickedButton2
+            addPassenger gui3 = new addPassenger();
+            addMedewerker gui2 = new addMedewerker();
+        if (t=="medewerker"){
+            gui2.setVisible(true);
+        }else{
+            gui3.setVisible(true);
+        }
+    }//GEN-LAST:event_clickedButton2
+
+    private void clickedButton1(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clickedButton1
+        addLuggage gui = new addLuggage();
+        addMedewerker gui2 = new addMedewerker();
+        if (t=="medewerker"){
+            gui2.setVisible(true);
+        }else{
+            gui.setVisible(true);
+        }
+    }//GEN-LAST:event_clickedButton1
 
     /**
      * @param args the command line arguments
