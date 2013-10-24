@@ -133,7 +133,7 @@ public class logIn extends javax.swing.JFrame {
             }
             dispose();
         }else{
-            errorLabel.setText("You\'re an idiot. That\'s not a valid login");
+            errorLabel.setText("Invalid username/password. Please try again.");
         }
     }//GEN-LAST:event_LogInActionPerformed
     private static boolean isPasswordCorrect(char[] input) {
