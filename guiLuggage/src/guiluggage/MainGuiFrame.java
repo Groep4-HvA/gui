@@ -18,8 +18,8 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     public String button2;
     public boolean inBeheer = false;
     public boolean beheer = false;
-    public void beheerSetter(){
-        beheer = true;
+    public void beheerSetter(boolean value){
+        beheer = value;
     }
     public MainGuiFrame() {
         if (beheer){

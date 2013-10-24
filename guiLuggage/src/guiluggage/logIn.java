@@ -124,7 +124,7 @@ public class logIn extends javax.swing.JFrame {
                     main.setVisible(true);
                     break;
                 case "medewerker2":
-                    main.beheerSetter();
+                    main.beheerSetter(true);
                     main.setVisible(true);
                     break;
                 case "manager":
