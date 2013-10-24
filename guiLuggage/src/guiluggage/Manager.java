@@ -143,6 +143,11 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
         });
 
         graphManager.setText("Graph");
+        graphManager.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graphManagerActionPerformed(evt);
+            }
+        });
 
         org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -269,6 +274,11 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     private void processedManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processedManagerActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_processedManagerActionPerformed
+
+    private void graphManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graphManagerActionPerformed
+       ManagerGraph showGraph = new ManagerGraph();
+       showGraph.setVisible(true);
+    }//GEN-LAST:event_graphManagerActionPerformed
 
     /**
      * @param args the command line arguments
