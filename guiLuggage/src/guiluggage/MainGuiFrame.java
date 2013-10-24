@@ -234,7 +234,8 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     }//GEN-LAST:event_exitForm
 
     private void advancedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_advancedActionPerformed
-        // TODO add your handling code here:
+      Advanced advancedPopUp = new Advanced();
+      advancedPopUp.setVisible(true);
     }//GEN-LAST:event_advancedActionPerformed
 
     private void moreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreButtonActionPerformed
