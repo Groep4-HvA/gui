@@ -46,6 +46,7 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
         foundManager = new javax.swing.JButton();
         processedManager = new javax.swing.JButton();
         graphManager = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -102,29 +103,37 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
 
         graphManager.setText("Graph");
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiluggage/Screenshot 2013-10-24 13.40.36.png"))); // NOI18N
+        jLabel1.setToolTipText("");
+
         org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2Layout.createSequentialGroup()
+            .add(jPanel2Layout.createSequentialGroup()
                 .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .add(myAccountButton)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(logoutButton)
+                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                            .add(jPanel2Layout.createSequentialGroup()
+                                .add(missingManager)
+                                .add(33, 33, 33)
+                                .add(foundManager)
+                                .add(43, 43, 43)
+                                .add(processedManager)
+                                .add(569, 569, 569))
+                            .add(moreButton))
+                        .add(61, 61, 61))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .add(myAccountButton)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(graphManager)
+                            .add(logoutButton))))
                 .addContainerGap())
             .add(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(35, Short.MAX_VALUE)
-                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(jPanel2Layout.createSequentialGroup()
-                        .add(missingManager)
-                        .add(33, 33, 33)
-                        .add(foundManager)
-                        .add(43, 43, 43)
-                        .add(processedManager)
-                        .add(488, 488, 488)
-                        .add(graphManager))
-                    .add(moreButton))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .add(jLabel1)
+                .add(0, 7, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -133,15 +142,17 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(myAccountButton)
                     .add(logoutButton))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 38, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 12, Short.MAX_VALUE)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(missingManager)
                     .add(foundManager)
                     .add(processedManager)
                     .add(graphManager))
-                .add(444, 444, 444)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jLabel1)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(moreButton)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         add(jPanel2, java.awt.BorderLayout.CENTER);
@@ -202,6 +213,7 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton foundManager;
     private javax.swing.JButton graphManager;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton logoutButton;
     private javax.swing.JButton missingManager;
