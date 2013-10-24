@@ -176,6 +176,11 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
                 logoutButtonMouseClicked(evt);
             }
         });
+        logoutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutButtonActionPerformed(evt);
+            }
+        });
 
         org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -339,6 +344,13 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
         addLuggage l = new addLuggage();
         l.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_tableResultsMousePressed
+
+    private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
+        dispose();
+        logIn logOut = new logIn();
+        logOut.setVisible(true);
+        
+    }//GEN-LAST:event_logoutButtonActionPerformed
 
     /**
      * @param args the command line arguments

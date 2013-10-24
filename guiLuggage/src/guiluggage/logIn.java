@@ -131,6 +131,7 @@ public class logIn extends javax.swing.JFrame {
                     main2.setVisible(true);
                     break;
             }
+            dispose();
         }else{
             errorLabel.setText("You\'re an idiot. That\'s not a valid login");
         }
@@ -181,8 +182,11 @@ public class logIn extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new logIn().setVisible(true);
+                
             }
+  
         });
+        
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton LogIn;
