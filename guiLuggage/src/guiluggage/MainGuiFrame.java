@@ -16,13 +16,8 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
      */
     public String button1;
     public String button2;
-<<<<<<< HEAD
     public boolean inBeheer = false;
     public boolean beheer = false;
-=======
-    public boolean beheer = true;
->>>>>>> f8d7c42248ef4e663efe91248f3f94b3465e9128
-    
     public void beheerSetter(){
         beheer = true;
     }
