@@ -9,7 +9,7 @@ package guiluggage;
  *
  * @author sean
  */
-public class MainGuiFrame extends java.awt.Frame {
+public class Manager extends java.awt.Frame {
 private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame(),true);
     /**
      * Creates new form MainGuiFrame
@@ -17,9 +17,8 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     public String t = "mederker";
     public String button1;
     public String button2;
-    public boolean beheer = true;
     
-    public MainGuiFrame() {
+    public Manager() {
         if (t=="medewerker"){
             button1 = "Medewerker";
             button2 = "Manager";
@@ -40,47 +39,21 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        advanced = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        searchInput = new javax.swing.JTextArea();
-        searchButton = new javax.swing.JButton();
         addNewButton1 = new javax.swing.JButton();
         addNewButton2 = new javax.swing.JButton();
         javax.swing.JButton moreButton = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         tableResults = new javax.swing.JTable();
-        appManagementButton = new javax.swing.JButton();
         myAccountButton = new javax.swing.JButton();
         logoutButton = new javax.swing.JButton();
+        missingManager = new javax.swing.JButton();
+        foundManager = new javax.swing.JButton();
+        processedManager = new javax.swing.JButton();
+        graphManager = new javax.swing.JButton();
 
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 exitForm(evt);
-            }
-        });
-
-        advanced.setText("Advanced");
-        advanced.setToolTipText("Advanced search");
-        advanced.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                advancedClicked(evt);
-            }
-        });
-        advanced.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                advancedActionPerformed(evt);
-            }
-        });
-
-        searchInput.setColumns(20);
-        searchInput.setRows(1);
-        searchInput.setToolTipText("");
-        jScrollPane1.setViewportView(searchInput);
-
-        searchButton.setText("Search");
-        searchButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                searchButtonMouseClicked(evt);
             }
         });
 
@@ -132,29 +105,7 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tableResults.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                tableResultsMousePressed(evt);
-            }
-        });
-        tableResults.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                tableResultsKeyPressed(evt);
-            }
-        });
         jScrollPane3.setViewportView(tableResults);
-
-        appManagementButton.setText("Application management");
-        appManagementButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                appManagementButtonMouseClicked(evt);
-            }
-        });
-        appManagementButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                appManagementButtonActionPerformed(evt);
-            }
-        });
 
         myAccountButton.setText("My account");
         myAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -175,53 +126,68 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
             }
         });
 
+        missingManager.setText("Missing");
+        missingManager.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                missingManagerActionPerformed(evt);
+            }
+        });
+
+        foundManager.setText("Found");
+
+        processedManager.setText("Processed");
+        processedManager.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                processedManagerActionPerformed(evt);
+            }
+        });
+
+        graphManager.setText("Graph");
+
         org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2Layout.createSequentialGroup()
-                .add(0, 0, Short.MAX_VALUE)
-                .add(advanced)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(searchButton)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .add(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
-                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 931, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                        .add(jPanel2Layout.createSequentialGroup()
-                            .add(addNewButton1)
-                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                            .add(addNewButton2)
-                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(moreButton))
-                        .add(jScrollPane3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 928, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(33, Short.MAX_VALUE))
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .add(appManagementButton)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(myAccountButton)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(logoutButton)
                 .addContainerGap())
+            .add(jPanel2Layout.createSequentialGroup()
+                .addContainerGap(35, Short.MAX_VALUE)
+                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
+                    .add(jPanel2Layout.createSequentialGroup()
+                        .add(missingManager)
+                        .add(33, 33, 33)
+                        .add(foundManager)
+                        .add(43, 43, 43)
+                        .add(processedManager)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(graphManager))
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel2Layout.createSequentialGroup()
+                        .add(addNewButton1)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(addNewButton2)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(moreButton))
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, jScrollPane3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 928, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(appManagementButton)
                     .add(myAccountButton)
                     .add(logoutButton))
-                .add(18, 18, 18)
-                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 38, Short.MAX_VALUE)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(searchButton)
-                    .add(advanced))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(missingManager)
+                    .add(foundManager)
+                    .add(processedManager)
+                    .add(graphManager))
+                .add(18, 18, 18)
                 .add(jScrollPane3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -244,26 +210,9 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
         System.exit(0);
     }//GEN-LAST:event_exitForm
 
-    private void advancedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_advancedActionPerformed
-      Advanced advancedPopUp = new Advanced();
-      advancedPopUp.setVisible(true);
-    }//GEN-LAST:event_advancedActionPerformed
-
     private void moreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_moreButtonActionPerformed
-
-    private void appManagementButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_appManagementButtonActionPerformed
-       
-    }//GEN-LAST:event_appManagementButtonActionPerformed
-
-    private void advancedClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_advancedClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_advancedClicked
-
-    private void searchButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchButtonMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_searchButtonMouseClicked
 
     private void moreButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_moreButtonMouseClicked
         // TODO add your handling code here:
@@ -284,20 +233,6 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     private void logoutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_logoutButtonMouseClicked
-
-    private void appManagementButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appManagementButtonMouseClicked
-        if(t == "medewerker"){
-            t = "Application Management";
-            addNewButton1.setText("Add new: " + button1);
-            addNewButton2.setText("Add new: " + button2);
-            appManagementButton.setText("Application Management");
-        }else{
-            t = "medewerker";
-            appManagementButton.setText("Overzicht");
-        addNewButton1.setText("Add new: Manager");
-        addNewButton2.setText("Add new: Medewerker");
-        }
-    }//GEN-LAST:event_appManagementButtonMouseClicked
 
     private void clickedButton2(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clickedButton2
             addPassenger gui3 = new addPassenger();
@@ -327,14 +262,13 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
         // TODO add your handling code here:
     }//GEN-LAST:event_myAccountButtonActionPerformed
 
-    private void tableResultsKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tableResultsKeyPressed
+    private void missingManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_missingManagerActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tableResultsKeyPressed
+    }//GEN-LAST:event_missingManagerActionPerformed
 
-    private void tableResultsMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableResultsMousePressed
-        addLuggage l = new addLuggage();
-        l.setVisible(true);// TODO add your handling code here:
-    }//GEN-LAST:event_tableResultsMousePressed
+    private void processedManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processedManagerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_processedManagerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -342,7 +276,7 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainGuiFrame().setVisible(true);
+                new Manager().setVisible(true);
                 
             }
         });
@@ -350,15 +284,14 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addNewButton1;
     private javax.swing.JButton addNewButton2;
-    private javax.swing.JButton advanced;
-    private javax.swing.JButton appManagementButton;
+    private javax.swing.JButton foundManager;
+    private javax.swing.JButton graphManager;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JButton logoutButton;
+    private javax.swing.JButton missingManager;
     private javax.swing.JButton myAccountButton;
-    private javax.swing.JButton searchButton;
-    private javax.swing.JTextArea searchInput;
+    private javax.swing.JButton processedManager;
     private javax.swing.JTable tableResults;
     // End of variables declaration//GEN-END:variables
 }
