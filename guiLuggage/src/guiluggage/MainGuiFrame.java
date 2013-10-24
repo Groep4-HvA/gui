@@ -16,8 +16,12 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
      */
     public String button1;
     public String button2;
+<<<<<<< HEAD
     public boolean inBeheer = false;
     public boolean beheer = false;
+=======
+    public boolean beheer = true;
+>>>>>>> f8d7c42248ef4e663efe91248f3f94b3465e9128
     
     public void beheerSetter(){
         beheer = true;
@@ -135,6 +139,16 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tableResults.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                tableResultsMousePressed(evt);
+            }
+        });
+        tableResults.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tableResultsKeyPressed(evt);
+            }
+        });
         jScrollPane3.setViewportView(tableResults);
 
         appManagementButton.setText("Application management");
@@ -214,7 +228,7 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(searchButton)
                     .add(advanced))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED, 15, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(jScrollPane3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -222,7 +236,7 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
                     .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                         .add(moreButton)
                         .add(addNewButton2)))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         add(jPanel2, java.awt.BorderLayout.CENTER);
@@ -247,7 +261,7 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     }//GEN-LAST:event_moreButtonActionPerformed
 
     private void appManagementButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_appManagementButtonActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_appManagementButtonActionPerformed
 
     private void advancedClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_advancedClicked
@@ -321,6 +335,15 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
         passOverlay.setLocationRelativeTo(null);
         // TODO add your handling code here:
     }//GEN-LAST:event_myAccountButtonActionPerformed
+
+    private void tableResultsKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tableResultsKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tableResultsKeyPressed
+
+    private void tableResultsMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableResultsMousePressed
+        addLuggage l = new addLuggage();
+        l.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_tableResultsMousePressed
 
     /**
      * @param args the command line arguments
