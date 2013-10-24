@@ -17,7 +17,7 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     public String button1;
     public String button2;
     public boolean inBeheer = false;
-    public boolean beheer = false;
+    public static boolean beheer;
     public void beheerSetter(boolean value){
         beheer = value;
     }
@@ -31,7 +31,7 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
         }
         
         initComponents();
-        if(beheer){appManagementButton.setVisible(false);};
+
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -293,7 +293,7 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     }//GEN-LAST:event_logoutButtonMouseClicked
 
     private void appManagementButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appManagementButtonMouseClicked
-        while(beheer){
+        if(beheer){
             if(inBeheer){
                 inBeheer = false;
                 addNewButton1.setText("Add new: " + button1);
@@ -349,7 +349,6 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
         dispose();
         logIn logOut = new logIn();
         logOut.setVisible(true);
-        
     }//GEN-LAST:event_logoutButtonActionPerformed
 
     /**
@@ -359,7 +358,9 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MainGuiFrame().setVisible(true);
-                
+                if(beheer==true){
+                    appManagementButton.setVisible(false);
+                };
             }
         });
     }
