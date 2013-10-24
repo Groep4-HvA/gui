@@ -117,6 +117,7 @@ public class logIn extends javax.swing.JFrame {
         if(isPasswordCorrect(pass)&&Arrays.asList(users).contains(username)){
             MainGuiFrame main = new MainGuiFrame();
             Manager main2 = new Manager();
+            main.beheerSetter(false);
             switch(username){
                 default:
                     break;
