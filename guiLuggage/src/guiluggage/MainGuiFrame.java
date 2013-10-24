@@ -4,14 +4,13 @@
  */
 package guiluggage;
 
-import javax.swing.JFrame;
 
 /**
  *
  * @author sean
  */
 public class MainGuiFrame extends java.awt.Frame {
-
+private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame(),true);
     /**
      * Creates new form MainGuiFrame
      */
@@ -152,6 +151,11 @@ public class MainGuiFrame extends java.awt.Frame {
                 myAccountButtonMouseClicked(evt);
             }
         });
+        myAccountButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myAccountButtonActionPerformed(evt);
+            }
+        });
 
         logoutButton.setText("Logout");
         logoutButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -206,7 +210,7 @@ public class MainGuiFrame extends java.awt.Frame {
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(searchButton)
                     .add(advanced))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED, 15, Short.MAX_VALUE)
                 .add(jScrollPane3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -214,7 +218,7 @@ public class MainGuiFrame extends java.awt.Frame {
                     .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                         .add(moreButton)
                         .add(addNewButton2)))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         add(jPanel2, java.awt.BorderLayout.CENTER);
@@ -302,6 +306,14 @@ public class MainGuiFrame extends java.awt.Frame {
             gui.setVisible(true);
         }
     }//GEN-LAST:event_clickedButton1
+
+    private void myAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myAccountButtonActionPerformed
+        
+        passOverlay.pack();
+        passOverlay.setVisible(true);
+        passOverlay.setLocationRelativeTo(null);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_myAccountButtonActionPerformed
 
     /**
      * @param args the command line arguments

@@ -31,6 +31,7 @@ public class GuiLuggage {
 //      messages = ResourceBundle.getBundle("translation", currentLocale);
 //      main.setName(messages.getString("greetings"));
         main.setVisible(true);
+        main.setLocationRelativeTo(null);
         
     }
 }
