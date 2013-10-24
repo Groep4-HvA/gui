@@ -25,13 +25,15 @@ public class GuiLuggage {
 //            language = args[0];
 //            country = args[1];
 //        }
-        MainGuiFrame main = new MainGuiFrame();
+//      MainGuiFrame main = new MainGuiFrame();
+        
+        logIn login = new logIn();
         currentLocale = new Locale(language, country);
                 
 //      messages = ResourceBundle.getBundle("translation", currentLocale);
 //      main.setName(messages.getString("greetings"));
-        main.setVisible(true);
-        main.setLocationRelativeTo(null);
+        login.setVisible(true);
+        login.setLocationRelativeTo(null);
         
     }
 }
