@@ -29,9 +29,13 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
             button1 = "Luggage";
             button2 = "Passenger";
         }
-        
         initComponents();
-
+        if(beheer!=true){
+            appManagementButton.setVisible(false);
+        }else{
+            appManagementButton.setVisible(true);
+            System.exit(0);
+        };
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -358,9 +362,6 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MainGuiFrame().setVisible(true);
-                if(beheer==true){
-                    appManagementButton.setVisible(false);
-                };
             }
         });
     }
