@@ -119,8 +119,6 @@ public class logIn extends javax.swing.JFrame {
             Manager main2 = new Manager();
             main.beheerSetter(false);
             switch(username){
-                default:
-                    break;
                 case "medewerker":
                     main.setVisible(true);
                     break;
