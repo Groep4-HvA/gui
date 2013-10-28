@@ -4,13 +4,13 @@
  */
 package guiluggage;
 
-
 /**
  *
  * @author sean
  */
 public class MainGuiFrame extends java.awt.Frame {
-private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame(),true);
+
+    private final passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame(), true);
     /**
      * Creates new form MainGuiFrame
      */
@@ -18,25 +18,20 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     public String button2;
     public boolean inBeheer = false;
     public boolean beheer;
-    
-    public MainGuiFrame() {
-      
-        if (beheer){
-            button1 = "Medewerker";
-            button2 = "Manager";
-        }else{
-            button1 = "Luggage";
-            button2 = "Passenger";
-        }
+
+    public MainGuiFrame(boolean value) {
+        beheer = value;
+        button1 = "Luggage";
+        button2 = "Passenger";
         initComponents();
-        if(beheer){
+        if (beheer) {
             appManagementButton.setVisible(true);
-            System.exit(0);
-        }else{
+        } else {
             appManagementButton.setVisible(false);
-        };
-        System.out.print("frame:"+beheer);
+        }
+//        System.out.println("3+" + beheer);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -67,11 +62,6 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
 
         advanced.setText("Advanced");
         advanced.setToolTipText("Advanced search");
-        advanced.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                advancedClicked(evt);
-            }
-        });
         advanced.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 advancedActionPerformed(evt);
@@ -84,18 +74,8 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
         jScrollPane1.setViewportView(searchInput);
 
         searchButton.setText("Search");
-        searchButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                searchButtonMouseClicked(evt);
-            }
-        });
 
         addNewButton1.setText("Add new: " + button1);
-        addNewButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                addNewButton1MouseClicked(evt);
-            }
-        });
         addNewButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clickedButton1(evt);
@@ -104,11 +84,6 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
 
         addNewButton2.setText("Add new: "+ button2);
         addNewButton2.setToolTipText("");
-        addNewButton2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                addNewButton2MouseClicked(evt);
-            }
-        });
         addNewButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clickedButton2(evt);
@@ -116,11 +91,6 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
         });
 
         moreButton.setText("More");
-        moreButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                moreButtonMouseClicked(evt);
-            }
-        });
         moreButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 moreButtonActionPerformed(evt);
@@ -151,11 +121,6 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
         jScrollPane3.setViewportView(tableResults);
 
         appManagementButton.setText("Application management");
-        appManagementButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                appManagementButtonMouseClicked(evt);
-            }
-        });
         appManagementButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 appManagementButtonActionPerformed(evt);
@@ -163,11 +128,6 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
         });
 
         myAccountButton.setText("My account");
-        myAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                myAccountButtonMouseClicked(evt);
-            }
-        });
         myAccountButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 myAccountButtonActionPerformed(evt);
@@ -175,11 +135,6 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
         });
 
         logoutButton.setText("Logout");
-        logoutButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                logoutButtonMouseClicked(evt);
-            }
-        });
         logoutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logoutButtonActionPerformed(evt);
@@ -256,8 +211,8 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     }//GEN-LAST:event_exitForm
 
     private void advancedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_advancedActionPerformed
-      Advanced advancedPopUp = new Advanced();
-      advancedPopUp.setVisible(true);
+        Advanced advancedPopUp = new Advanced();
+        advancedPopUp.setVisible(true);
     }//GEN-LAST:event_advancedActionPerformed
 
     private void moreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreButtonActionPerformed
@@ -265,59 +220,27 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     }//GEN-LAST:event_moreButtonActionPerformed
 
     private void appManagementButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_appManagementButtonActionPerformed
-        if(beheer){
-            if(inBeheer){
+        if (beheer) {
+            if (inBeheer) {
                 inBeheer = false;
                 addNewButton1.setText("Add new: " + button1);
                 addNewButton2.setText("Add new: " + button2);
                 appManagementButton.setText("Application Management");
-            }else{
+            } else {
                 inBeheer = true;
+                addNewButton1.setText("Add new: Manager");
+                addNewButton2.setText("Add new: Medewerker");
                 appManagementButton.setText("Overzicht");
-            addNewButton1.setText("Add new: Manager");
-            addNewButton2.setText("Add new: Medewerker");
             }
         }
     }//GEN-LAST:event_appManagementButtonActionPerformed
 
-    private void advancedClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_advancedClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_advancedClicked
-
-    private void searchButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchButtonMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_searchButtonMouseClicked
-
-    private void moreButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_moreButtonMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_moreButtonMouseClicked
-
-    private void addNewButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addNewButton1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addNewButton1MouseClicked
-
-    private void addNewButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addNewButton2MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addNewButton2MouseClicked
-
-    private void myAccountButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myAccountButtonMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_myAccountButtonMouseClicked
-
-    private void logoutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_logoutButtonMouseClicked
-
-    private void appManagementButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appManagementButtonMouseClicked
-
-    }//GEN-LAST:event_appManagementButtonMouseClicked
-
     private void clickedButton2(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clickedButton2
-            addPassenger gui3 = new addPassenger();
-            addMedewerker gui2 = new addMedewerker();
-        if (inBeheer){
+        addPassenger gui3 = new addPassenger();
+        addMedewerker gui2 = new addMedewerker();
+        if (inBeheer) {
             gui2.setVisible(true);
-        }else{
+        } else {
             gui3.setVisible(true);
         }
     }//GEN-LAST:event_clickedButton2
@@ -325,15 +248,15 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     private void clickedButton1(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clickedButton1
         addLuggage gui = new addLuggage();
         addMedewerker gui2 = new addMedewerker();
-        if (inBeheer){
+        if (inBeheer) {
             gui2.setVisible(true);
-        }else{
+        } else {
             gui.setVisible(true);
         }
     }//GEN-LAST:event_clickedButton1
 
     private void myAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myAccountButtonActionPerformed
-        
+
         passOverlay.pack();
         passOverlay.setVisible(true);
         passOverlay.setLocationRelativeTo(null);
@@ -355,16 +278,6 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
         logOut.setVisible(true);
     }//GEN-LAST:event_logoutButtonActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MainGuiFrame().setVisible(true);
-            }
-        });
-    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addNewButton1;
     private javax.swing.JButton addNewButton2;

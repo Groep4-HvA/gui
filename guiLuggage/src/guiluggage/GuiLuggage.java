@@ -25,7 +25,6 @@ public class GuiLuggage {
 //            language = args[0];
 //            country = args[1];
 //        }
-//      MainGuiFrame main = new MainGuiFrame();
         
         logIn login = new logIn();
         currentLocale = new Locale(language, country);
