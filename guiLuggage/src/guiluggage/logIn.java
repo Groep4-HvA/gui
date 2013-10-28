@@ -11,13 +11,25 @@ import java.util.Arrays;
  * @author ChrisvanderHeijden
  */
 public class logIn extends javax.swing.JFrame {
+    public boolean value;
 
     /**
      * Creates new form logIn
      */
     public logIn() {
         initComponents();
+        getRootPane().setDefaultButton(LogIn);
     }
+    
+    public boolean beheerSet(boolean value){
+        if(value){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -121,10 +133,13 @@ public class logIn extends javax.swing.JFrame {
             switch(username){
                 case "medewerker":
                     main.setVisible(true);
+                    value = false;
+                    beheerSet(value);
                     break;
                 case "medewerker2":
                     main.beheerSetter(true);
                     main.setVisible(true);
+                    value = true;
                     break;
                 case "manager":
                     main2.setVisible(true);

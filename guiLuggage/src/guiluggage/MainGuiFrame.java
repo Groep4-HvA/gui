@@ -17,11 +17,14 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     public String button1;
     public String button2;
     public boolean inBeheer = false;
-    public static boolean beheer;
+    public boolean beheer = false;
+    
     public void beheerSetter(boolean value){
         beheer = value;
     }
+    
     public MainGuiFrame() {
+      
         if (beheer){
             button1 = "Medewerker";
             button2 = "Manager";
@@ -30,7 +33,7 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
             button2 = "Passenger";
         }
         initComponents();
-        if(beheer!=true){
+        if(!beheer){
             appManagementButton.setVisible(false);
         }else{
             appManagementButton.setVisible(true);
