@@ -20,15 +20,6 @@ public class logIn extends javax.swing.JFrame {
         initComponents();
         getRootPane().setDefaultButton(LogIn);
     }
-    
-//    public boolean beheerSet(boolean value){
-//        if(value){
-//            return true;
-//        }else{
-//            return false;
-//        }
-//    }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -57,12 +48,6 @@ public class logIn extends javax.swing.JFrame {
         LogIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LogInActionPerformed(evt);
-            }
-        });
-
-        userName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userNameActionPerformed(evt);
             }
         });
 
@@ -118,55 +103,47 @@ public class logIn extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void userNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_userNameActionPerformed
-
     private void LogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInActionPerformed
-        String[] users = { "medewerker", "medewerker2", "manager"};
+        String[] users = {"medewerker", "medewerker2", "manager"};
         String username = userName.getText();
-        char[] pass     = passWord.getPassword();
-        if(isPasswordCorrect(pass)&&Arrays.asList(users).contains(username)){
-            MainGuiFrame main = new MainGuiFrame();
+        char[] pass = passWord.getPassword();
+        if (isPasswordCorrect(pass) && Arrays.asList(users).contains(username)) {
+            MainGuiFrame main = new MainGuiFrame((username.equals("medewerker2")));
             Manager main2 = new Manager();
-            //main.beheerSetter(false);
-            main.beheer = (username.equals("medewerker2"))? true:false;
-            switch(username){
+//            System.out.println("1."+main.beheer);
+            switch (username) {
                 case "medewerker":
                     main.setVisible(true);
-                    //value = false;
-                    //beheerSet(value);
                     break;
                 case "medewerker2":
-                    main.beheer = true;
                     main.setVisible(true);
-                    //value = true;
                     break;
                 case "manager":
                     main2.setVisible(true);
                     break;
             }
-            System.out.print(main.beheer);
+//            System.out.println("2."+main.beheer);
             dispose();
-        }else{
+        } else {
             errorLabel.setText("Invalid username/password. Please try again.");
         }
     }//GEN-LAST:event_LogInActionPerformed
     private static boolean isPasswordCorrect(char[] input) {
-        boolean isCorrect = true;
-        char[] correctPassword = { '1', '2', '3', '4', '5', '6' };
- 
+        boolean isCorrect;
+        char[] correctPassword = {'1', '2', '3', '4', '5', '6'};
+
         if (input.length != correctPassword.length) {
             isCorrect = false;
         } else {
-            isCorrect = Arrays.equals (input, correctPassword);
+            isCorrect = Arrays.equals(input, correctPassword);
         }
- 
+
         //Zero out the password.
-        Arrays.fill(correctPassword,'0');
- 
+        Arrays.fill(correctPassword, '0');
+
         return isCorrect;
     }
+
     /**
      * @param args the command line arguments
      */
@@ -198,11 +175,11 @@ public class logIn extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new logIn().setVisible(true);
-                
+
             }
-  
+
         });
-        
+
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton LogIn;
