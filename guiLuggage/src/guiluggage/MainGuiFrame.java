@@ -228,9 +228,9 @@ public class MainGuiFrame extends java.awt.Frame {
                 appManagementButton.setText("Application Management");
             } else {
                 inBeheer = true;
-                appManagementButton.setText("Overzicht");
                 addNewButton1.setText("Add new: Manager");
                 addNewButton2.setText("Add new: Medewerker");
+                appManagementButton.setText("Overzicht");
             }
         }
     }//GEN-LAST:event_appManagementButtonActionPerformed
