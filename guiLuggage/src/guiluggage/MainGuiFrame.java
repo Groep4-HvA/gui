@@ -17,11 +17,7 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     public String button1;
     public String button2;
     public boolean inBeheer = false;
-    public boolean beheer = false;
-    
-    public void beheerSetter(boolean value){
-        beheer = value;
-    }
+    public boolean beheer;
     
     public MainGuiFrame() {
       
@@ -33,12 +29,13 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
             button2 = "Passenger";
         }
         initComponents();
-        if(!beheer){
-            appManagementButton.setVisible(false);
-        }else{
+        if(beheer){
             appManagementButton.setVisible(true);
             System.exit(0);
+        }else{
+            appManagementButton.setVisible(false);
         };
+        System.out.print("frame:"+beheer);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -268,7 +265,19 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     }//GEN-LAST:event_moreButtonActionPerformed
 
     private void appManagementButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_appManagementButtonActionPerformed
-       
+        if(beheer){
+            if(inBeheer){
+                inBeheer = false;
+                addNewButton1.setText("Add new: " + button1);
+                addNewButton2.setText("Add new: " + button2);
+                appManagementButton.setText("Application Management");
+            }else{
+                inBeheer = true;
+                appManagementButton.setText("Overzicht");
+            addNewButton1.setText("Add new: Manager");
+            addNewButton2.setText("Add new: Medewerker");
+            }
+        }
     }//GEN-LAST:event_appManagementButtonActionPerformed
 
     private void advancedClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_advancedClicked
@@ -300,19 +309,7 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     }//GEN-LAST:event_logoutButtonMouseClicked
 
     private void appManagementButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_appManagementButtonMouseClicked
-        if(beheer){
-            if(inBeheer){
-                inBeheer = false;
-                addNewButton1.setText("Add new: " + button1);
-                addNewButton2.setText("Add new: " + button2);
-                appManagementButton.setText("Application Management");
-            }else{
-                inBeheer = true;
-                appManagementButton.setText("Overzicht");
-            addNewButton1.setText("Add new: Manager");
-            addNewButton2.setText("Add new: Medewerker");
-            }
-        }
+
     }//GEN-LAST:event_appManagementButtonMouseClicked
 
     private void clickedButton2(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clickedButton2

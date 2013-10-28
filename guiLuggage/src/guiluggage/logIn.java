@@ -11,7 +11,7 @@ import java.util.Arrays;
  * @author ChrisvanderHeijden
  */
 public class logIn extends javax.swing.JFrame {
-    public boolean value;
+//    public boolean value;
 
     /**
      * Creates new form logIn
@@ -21,13 +21,13 @@ public class logIn extends javax.swing.JFrame {
         getRootPane().setDefaultButton(LogIn);
     }
     
-    public boolean beheerSet(boolean value){
-        if(value){
-            return true;
-        }else{
-            return false;
-        }
-    }
+//    public boolean beheerSet(boolean value){
+//        if(value){
+//            return true;
+//        }else{
+//            return false;
+//        }
+//    }
     
 
     /**
@@ -129,22 +129,24 @@ public class logIn extends javax.swing.JFrame {
         if(isPasswordCorrect(pass)&&Arrays.asList(users).contains(username)){
             MainGuiFrame main = new MainGuiFrame();
             Manager main2 = new Manager();
-            main.beheerSetter(false);
+            //main.beheerSetter(false);
+            main.beheer = (username.equals("medewerker2"))? true:false;
             switch(username){
                 case "medewerker":
                     main.setVisible(true);
-                    value = false;
-                    beheerSet(value);
+                    //value = false;
+                    //beheerSet(value);
                     break;
                 case "medewerker2":
-                    main.beheerSetter(true);
+                    main.beheer = true;
                     main.setVisible(true);
-                    value = true;
+                    //value = true;
                     break;
                 case "manager":
                     main2.setVisible(true);
                     break;
             }
+            System.out.print(main.beheer);
             dispose();
         }else{
             errorLabel.setText("Invalid username/password. Please try again.");
