@@ -45,6 +45,10 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
         processedManager = new javax.swing.JButton();
         graphManager = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        beginGraph = new javax.swing.JFormattedTextField();
+        endGraph = new javax.swing.JFormattedTextField();
+        till = new javax.swing.JLabel();
+        showSelectedDate = new javax.swing.JButton();
 
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -97,26 +101,55 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiluggage/Screenshot 2013-10-24 13.40.36.png"))); // NOI18N
         jLabel1.setToolTipText("");
 
+        beginGraph.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("d/M/yy"))));
+        beginGraph.setText("DD/MM/YYYY");
+        beginGraph.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                beginGraphActionPerformed(evt);
+            }
+        });
+
+        endGraph.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("d/M/yy"))));
+        endGraph.setText("DD/MM/YYYY");
+        endGraph.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                endGraphActionPerformed(evt);
+            }
+        });
+
+        till.setText("till");
+
+        showSelectedDate.setText("Show");
+
         org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(19, 19, 19)
+                .add(missingManager)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(foundManager)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(processedManager)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jPanel2Layout.createSequentialGroup()
-                        .add(missingManager)
-                        .add(33, 33, 33)
-                        .add(foundManager)
-                        .add(43, 43, 43)
-                        .add(processedManager)
-                        .add(630, 630, 630))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .add(myAccountButton)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED))
+                    .add(jPanel2Layout.createSequentialGroup()
+                        .add(42, 42, 42)
+                        .add(beginGraph, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(graphManager)
-                            .add(logoutButton))))
+                        .add(till)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(endGraph, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(35, 35, 35)
+                        .add(showSelectedDate)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(graphManager)
+                    .add(logoutButton))
                 .addContainerGap())
             .add(jPanel2Layout.createSequentialGroup()
                 .add(jLabel1)
@@ -134,10 +167,14 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
                     .add(missingManager)
                     .add(foundManager)
                     .add(processedManager)
-                    .add(graphManager))
+                    .add(graphManager)
+                    .add(beginGraph, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(endGraph, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(till)
+                    .add(showSelectedDate))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jLabel1)
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         add(jPanel2, java.awt.BorderLayout.CENTER);
@@ -181,6 +218,14 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     private void foundManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_foundManagerActionPerformed
         mainManager();
     }//GEN-LAST:event_foundManagerActionPerformed
+
+    private void beginGraphActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beginGraphActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_beginGraphActionPerformed
+
+    private void endGraphActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endGraphActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_endGraphActionPerformed
     public void mainManager(){
         Manager main = new Manager(beheer);
         main.setVisible(true);
@@ -198,6 +243,8 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JFormattedTextField beginGraph;
+    private javax.swing.JFormattedTextField endGraph;
     private javax.swing.JButton foundManager;
     private javax.swing.JButton graphManager;
     private javax.swing.JLabel jLabel1;
@@ -206,5 +253,7 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     private javax.swing.JButton missingManager;
     private javax.swing.JButton myAccountButton;
     private javax.swing.JButton processedManager;
+    private javax.swing.JButton showSelectedDate;
+    private javax.swing.JLabel till;
     // End of variables declaration//GEN-END:variables
 }
