@@ -72,7 +72,16 @@ public class MainGuiFrame extends java.awt.Frame {
 
         searchInput.setColumns(20);
         searchInput.setRows(1);
+        searchInput.setText("search");
         searchInput.setToolTipText("");
+        searchInput.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                searchInputFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                searchInputFocusLost(evt);
+            }
+        });
         jScrollPane1.setViewportView(searchInput);
 
         searchButton.setText("Search");
@@ -112,8 +121,8 @@ public class MainGuiFrame extends java.awt.Frame {
             }
         ));
         tableResults.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                tableResultsMousePressed(evt);
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableResultsMouseClicked(evt);
             }
         });
         tableResults.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -198,7 +207,7 @@ public class MainGuiFrame extends java.awt.Frame {
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(searchButton)
                     .add(advanced))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED, 15, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(jScrollPane3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -206,7 +215,7 @@ public class MainGuiFrame extends java.awt.Frame {
                     .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                         .add(moreButton)
                         .add(addNewButton2)))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         add(jPanel2, java.awt.BorderLayout.CENTER);
@@ -278,17 +287,29 @@ public class MainGuiFrame extends java.awt.Frame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tableResultsKeyPressed
 
-    private void tableResultsMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableResultsMousePressed
-        addLuggage l = new addLuggage();
-        l.setVisible(true);// TODO add your handling code here:
-    }//GEN-LAST:event_tableResultsMousePressed
-
     private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
         dispose();
         logIn logOut = new logIn();
         logOut.setVisible(true);
     }//GEN-LAST:event_logoutButtonActionPerformed
 
+    private void tableResultsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableResultsMouseClicked
+        if (inBeheer) {
+            Popupappmedewerker popup1 = new Popupappmedewerker();
+            popup1.setVisible(true);
+        }else{
+            popupmedewerker popup = new popupmedewerker();
+            popup.setVisible(true);
+        }
+    }//GEN-LAST:event_tableResultsMouseClicked
+
+    private void searchInputFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchInputFocusGained
+        searchInput.setText("");
+    }//GEN-LAST:event_searchInputFocusGained
+
+    private void searchInputFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchInputFocusLost
+        searchInput.setText("search");
+    }//GEN-LAST:event_searchInputFocusLost
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LabelDescription;
     private javax.swing.JButton addNewButton1;
