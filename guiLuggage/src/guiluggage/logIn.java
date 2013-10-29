@@ -18,6 +18,7 @@ public class logIn extends javax.swing.JFrame {
      */
     public logIn() {
         initComponents();
+        userName.requestFocusInWindow();
         getRootPane().setDefaultButton(LogIn);
     }
 
@@ -109,7 +110,7 @@ public class logIn extends javax.swing.JFrame {
         char[] pass = passWord.getPassword();
         if (isPasswordCorrect(pass) && Arrays.asList(users).contains(username)) {
             MainGuiFrame main = new MainGuiFrame((username.equals("medewerker2")));
-            Manager main2 = new Manager();
+            Manager main2 = new Manager((username.equals("medewerker2")));
 //            System.out.println("1."+main.beheer);
             switch (username) {
                 case "medewerker":

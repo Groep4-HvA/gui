@@ -14,20 +14,19 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     /**
      * Creates new form MainGuiFrame
      */
-    public String t = "mederker";
+    public boolean beheer;
     public String button1;
     public String button2;
     
-    public ManagerGraph() {
-        if (t=="medewerker"){
+    public ManagerGraph(boolean value) {
+        beheer = value;
+        if (beheer){
             button1 = "Medewerker";
             button2 = "Manager";
         }else{
             button1 = "Luggage";
             button2 = "Passenger";
         }
-        
-        
         initComponents();
     }
     /**
@@ -39,7 +38,6 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        javax.swing.JButton moreButton = new javax.swing.JButton();
         myAccountButton = new javax.swing.JButton();
         logoutButton = new javax.swing.JButton();
         missingManager = new javax.swing.JButton();
@@ -51,18 +49,6 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 exitForm(evt);
-            }
-        });
-
-        moreButton.setText("More");
-        moreButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                moreButtonMouseClicked(evt);
-            }
-        });
-        moreButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                moreButtonActionPerformed(evt);
             }
         });
 
@@ -93,6 +79,11 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
         });
 
         foundManager.setText("Found");
+        foundManager.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                foundManagerActionPerformed(evt);
+            }
+        });
 
         processedManager.setText("Processed");
         processedManager.addActionListener(new java.awt.event.ActionListener() {
@@ -113,17 +104,13 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
             .add(jPanel2Layout.createSequentialGroup()
                 .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                            .add(jPanel2Layout.createSequentialGroup()
-                                .add(missingManager)
-                                .add(33, 33, 33)
-                                .add(foundManager)
-                                .add(43, 43, 43)
-                                .add(processedManager)
-                                .add(569, 569, 569))
-                            .add(moreButton))
-                        .add(61, 61, 61))
+                    .add(jPanel2Layout.createSequentialGroup()
+                        .add(missingManager)
+                        .add(33, 33, 33)
+                        .add(foundManager)
+                        .add(43, 43, 43)
+                        .add(processedManager)
+                        .add(630, 630, 630))
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2Layout.createSequentialGroup()
                         .add(myAccountButton)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
@@ -150,9 +137,7 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
                     .add(graphManager))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jLabel1)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(moreButton)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         add(jPanel2, java.awt.BorderLayout.CENTER);
@@ -167,20 +152,14 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
         System.exit(0);
     }//GEN-LAST:event_exitForm
 
-    private void moreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moreButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_moreButtonActionPerformed
-
-    private void moreButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_moreButtonMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_moreButtonMouseClicked
-
     private void myAccountButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myAccountButtonMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_myAccountButtonMouseClicked
 
     private void logoutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseClicked
-        // TODO add your handling code here:
+        dispose();
+        logIn logOut = new logIn();
+        logOut.setVisible(true);
     }//GEN-LAST:event_logoutButtonMouseClicked
 
     private void myAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myAccountButtonActionPerformed
@@ -192,20 +171,28 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     }//GEN-LAST:event_myAccountButtonActionPerformed
 
     private void missingManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_missingManagerActionPerformed
-        // TODO add your handling code here:
+        mainManager();
     }//GEN-LAST:event_missingManagerActionPerformed
 
     private void processedManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processedManagerActionPerformed
-        // TODO add your handling code here:
+        mainManager();
     }//GEN-LAST:event_processedManagerActionPerformed
 
+    private void foundManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_foundManagerActionPerformed
+        mainManager();
+    }//GEN-LAST:event_foundManagerActionPerformed
+    public void mainManager(){
+        Manager main = new Manager(beheer);
+        main.setVisible(true);
+        dispose();
+    }
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ManagerGraph().setVisible(true);
+                new ManagerGraph(false).setVisible(true);
                 
             }
         });

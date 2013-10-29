@@ -14,21 +14,21 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     /**
      * Creates new form MainGuiFrame
      */
-    public String t = "mederker";
+    public boolean beheer;
     public String button1;
     public String button2;
     
-    public Manager() {
-        if (t=="medewerker"){
+    public Manager(boolean value) {
+        if (beheer){
             button1 = "Medewerker";
             button2 = "Manager";
         }else{
             button1 = "Luggage";
             button2 = "Passenger";
         }
-        
-        
         initComponents();
+        addNewButton1.setVisible(false);
+        addNewButton2.setVisible(false);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -236,13 +236,15 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     }//GEN-LAST:event_myAccountButtonMouseClicked
 
     private void logoutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseClicked
-        // TODO add your handling code here:
+        dispose();
+        logIn logOut = new logIn();
+        logOut.setVisible(true);
     }//GEN-LAST:event_logoutButtonMouseClicked
 
     private void clickedButton2(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clickedButton2
             addPassenger gui3 = new addPassenger();
             addMedewerker gui2 = new addMedewerker();
-        if (t=="medewerker"){
+        if (beheer){
             gui2.setVisible(true);
         }else{
             gui3.setVisible(true);
@@ -252,7 +254,7 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     private void clickedButton1(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clickedButton1
         addLuggage gui = new addLuggage();
         addMedewerker gui2 = new addMedewerker();
-        if (t=="medewerker"){
+        if (beheer){
             gui2.setVisible(true);
         }else{
             gui.setVisible(true);
@@ -276,8 +278,9 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     }//GEN-LAST:event_processedManagerActionPerformed
 
     private void graphManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graphManagerActionPerformed
-       ManagerGraph showGraph = new ManagerGraph();
+       ManagerGraph showGraph = new ManagerGraph(beheer);
        showGraph.setVisible(true);
+       dispose();
     }//GEN-LAST:event_graphManagerActionPerformed
 
     /**
@@ -286,7 +289,7 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Manager().setVisible(true);
+                new Manager(false).setVisible(true);
                 
             }
         });

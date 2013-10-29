@@ -29,6 +29,7 @@ public class MainGuiFrame extends java.awt.Frame {
         } else {
             appManagementButton.setVisible(false);
         }
+        searchInput.requestFocusInWindow();
 //        System.out.println("3+" + beheer);
     }
 
