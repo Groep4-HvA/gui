@@ -8,8 +8,5 @@
 /guiLuggage/build/
 /guiLuggage/dist/
 
-guiLuggage/nbproject/genfiles.properties
-
-guiLuggage/nbproject/genfiles.properties
-
-guiLuggage/nbproject/project.properties
+/guiLuggage/nbproject/genfiles.properties
+/guiLuggage/nbproject/project.properties
