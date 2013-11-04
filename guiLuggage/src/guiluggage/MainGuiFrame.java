@@ -246,11 +246,13 @@ public class MainGuiFrame extends java.awt.Frame {
                 addNewButton1.setText("Add new: " + button1);
                 addNewButton2.setText("Add new: " + button2);
                 appManagementButton.setText("Application Management");
+                LabelDescription.setText("Search labelnumber:");
             } else {
                 inBeheer = true;
                 addNewButton1.setText("Add new: Manager");
                 addNewButton2.setText("Add new: Medewerker");
                 appManagementButton.setText("Overzicht");
+                LabelDescription.setText("Search name:");
             }
         }
     }//GEN-LAST:event_appManagementButtonActionPerformed
