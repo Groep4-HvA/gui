@@ -110,11 +110,11 @@ public class MainGuiFrame extends java.awt.Frame {
 
         tableResults.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"ASL19MNL", "found", "grey", "29/10/20"},
+                {"ASL19MNL", "found", "grey", "29/10/2013"},
+                {"ASL21FTR", "missing", "black", "4/11/2013"},
+                {"ASL9FUSA", "missing", "white", "1/11/2013"},
                 {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, "", null, null}
             },
             new String [] {
                 "label", "status", "color", "date"
@@ -207,7 +207,7 @@ public class MainGuiFrame extends java.awt.Frame {
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(searchButton)
                     .add(advanced))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED, 15, Short.MAX_VALUE)
                 .add(jScrollPane3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -215,7 +215,7 @@ public class MainGuiFrame extends java.awt.Frame {
                     .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                         .add(moreButton)
                         .add(addNewButton2)))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         add(jPanel2, java.awt.BorderLayout.CENTER);
@@ -247,12 +247,54 @@ public class MainGuiFrame extends java.awt.Frame {
                 addNewButton2.setText("Add new: " + button2);
                 appManagementButton.setText("Application Management");
                 LabelDescription.setText("Search labelnumber:");
+                
+                // first row
+                tableResults.getModel().setValueAt("ASL19MNL", 0, 0);
+                tableResults.getModel().setValueAt("found", 0, 1);
+                tableResults.getModel().setValueAt("grey", 0, 2);
+                tableResults.getModel().setValueAt("29/10/2013", 0, 3);
+                // second row
+                tableResults.getModel().setValueAt("ASL21FTR", 1, 0);
+                tableResults.getModel().setValueAt("missing", 1, 1);
+                tableResults.getModel().setValueAt("black", 1, 2);
+                tableResults.getModel().setValueAt("4//11/2013", 1, 3);
+                // third row
+                tableResults.getModel().setValueAt("ASL9FUSA", 2, 0);
+                tableResults.getModel().setValueAt("missing", 2, 1);
+                tableResults.getModel().setValueAt("white", 2, 2);
+                tableResults.getModel().setValueAt("1//11/2013", 2, 3);
+                
+                tableResults.getColumnModel().getColumn(0).setHeaderValue("Label");
+                tableResults.getColumnModel().getColumn(1).setHeaderValue("Status");
+                tableResults.getColumnModel().getColumn(2).setHeaderValue("Color");
+                tableResults.getColumnModel().getColumn(3).setHeaderValue("Date");
             } else {
                 inBeheer = true;
                 addNewButton1.setText("Add new: Manager");
                 addNewButton2.setText("Add new: Medewerker");
                 appManagementButton.setText("Overzicht");
                 LabelDescription.setText("Search name:");
+                
+                // first row
+                tableResults.getModel().setValueAt("Chris", 0, 0);
+                tableResults.getModel().setValueAt("V.d heijden", 0, 1);
+                tableResults.getModel().setValueAt("Medewerker", 0, 2);
+                tableResults.getModel().setValueAt("10/10/2012", 0, 3);
+                // second row
+                tableResults.getModel().setValueAt("Sean", 1, 0);
+                tableResults.getModel().setValueAt("Molenaar", 1, 1);
+                tableResults.getModel().setValueAt("Manager", 1, 2);
+                tableResults.getModel().setValueAt("01/01/2009", 1, 3);
+                // third row
+                tableResults.getModel().setValueAt("Fatih", 2, 0);
+                tableResults.getModel().setValueAt("Cigirci", 2, 1);
+                tableResults.getModel().setValueAt("Sys. Admin", 2, 2);
+                tableResults.getModel().setValueAt("05/04/2005", 2, 3);
+                
+                tableResults.getColumnModel().getColumn(0).setHeaderValue("Name");
+                tableResults.getColumnModel().getColumn(1).setHeaderValue("Achternaam");
+                tableResults.getColumnModel().getColumn(2).setHeaderValue("Role");
+                tableResults.getColumnModel().getColumn(3).setHeaderValue("Date");
             }
         }
     }//GEN-LAST:event_appManagementButtonActionPerformed

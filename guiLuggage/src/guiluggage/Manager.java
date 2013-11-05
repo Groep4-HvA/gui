@@ -50,6 +50,9 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
         foundManager = new javax.swing.JButton();
         processedManager = new javax.swing.JButton();
         graphManager = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -96,13 +99,13 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
 
         tableResults.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
+                {"ASL19MNL", "found", "grey", "29/10/2013"},
+                {"ASL21FTR", "missing", "black", "4/11/2013"},
+                {"ASL9FUSA", "missing", "white", "1/11/2013"},
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Label", "Status", "Color", "Date"
             }
         ));
         jScrollPane3.setViewportView(tableResults);
@@ -149,6 +152,15 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
             }
         });
 
+        jLabel1.setText("jLabel1");
+        jLabel1.setText("Found: 1");
+
+        jLabel2.setText("jLabel2");
+        jLabel2.setText("Missing: 2");
+
+        jLabel3.setText("jLabel3");
+        jLabel3.setText("Total: 3");
+
         org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -168,6 +180,12 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
                         .add(foundManager)
                         .add(43, 43, 43)
                         .add(processedManager)
+                        .add(18, 18, 18)
+                        .add(jLabel1)
+                        .add(18, 18, 18)
+                        .add(jLabel2)
+                        .add(18, 18, 18)
+                        .add(jLabel3)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .add(graphManager))
                     .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel2Layout.createSequentialGroup()
@@ -186,12 +204,15 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(myAccountButton)
                     .add(logoutButton))
-                .add(18, 18, Short.MAX_VALUE)
+                .add(18, 20, Short.MAX_VALUE)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(missingManager)
                     .add(foundManager)
                     .add(processedManager)
-                    .add(graphManager))
+                    .add(graphManager)
+                    .add(jLabel1)
+                    .add(jLabel2)
+                    .add(jLabel3))
                 .add(18, 18, 18)
                 .add(jScrollPane3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
@@ -200,7 +221,7 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
                     .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                         .add(moreButton)
                         .add(addNewButton2)))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         add(jPanel2, java.awt.BorderLayout.CENTER);
@@ -299,6 +320,9 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     private javax.swing.JButton addNewButton2;
     private javax.swing.JButton foundManager;
     private javax.swing.JButton graphManager;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JButton logoutButton;
