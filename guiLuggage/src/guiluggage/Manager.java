@@ -4,32 +4,32 @@
  */
 package guiluggage;
 
-
 /**
  *
  * @author sean
  */
 public class Manager extends java.awt.Frame {
-private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame(),true);
+
+    private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame(), true);
     /**
      * Creates new form MainGuiFrame
      */
     public boolean beheer;
     public String button1;
     public String button2;
-    
+
     public Manager(boolean value) {
-        if (beheer){
+        if (beheer) {
             button1 = "Medewerker";
             button2 = "Manager";
-        }else{
+        } else {
             button1 = "Luggage";
             button2 = "Passenger";
         }
         initComponents();
-        addNewButton1.setVisible(false);
-        addNewButton2.setVisible(false);
+
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -39,8 +39,6 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        addNewButton1 = new javax.swing.JButton();
-        addNewButton2 = new javax.swing.JButton();
         javax.swing.JButton moreButton = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         tableResults = new javax.swing.JTable();
@@ -50,35 +48,15 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
         foundManager = new javax.swing.JButton();
         processedManager = new javax.swing.JButton();
         graphManager = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        printButton = new javax.swing.JToggleButton();
 
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 exitForm(evt);
-            }
-        });
-
-        addNewButton1.setText("Add new: " + button1);
-        addNewButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                addNewButton1MouseClicked(evt);
-            }
-        });
-        addNewButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clickedButton1(evt);
-            }
-        });
-
-        addNewButton2.setText("Add new: "+ button2);
-        addNewButton2.setToolTipText("");
-        addNewButton2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                addNewButton2MouseClicked(evt);
-            }
-        });
-        addNewButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clickedButton2(evt);
             }
         });
 
@@ -149,6 +127,38 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
             }
         });
 
+        jTextField1.setText("DD/MM/YYYY");
+        jTextField1.setToolTipText("");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Till");
+
+        jTextField2.setText("DD/MM/YYYY");
+        jTextField2.setToolTipText("");
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Select");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        printButton.setText("Print");
+        printButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                printButtonActionPerformed(evt);
+            }
+        });
+
         org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -170,11 +180,17 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
                         .add(processedManager)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .add(graphManager))
-                    .add(org.jdesktop.layout.GroupLayout.LEADING, jPanel2Layout.createSequentialGroup()
-                        .add(addNewButton1)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(addNewButton2)
+                    .add(jPanel2Layout.createSequentialGroup()
+                        .add(printButton)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jLabel1)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                        .add(jTextField2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jButton1)
+                        .add(207, 207, 207)
                         .add(moreButton))
                     .add(org.jdesktop.layout.GroupLayout.LEADING, jScrollPane3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 928, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(33, Short.MAX_VALUE))
@@ -195,12 +211,14 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
                 .add(18, 18, 18)
                 .add(jScrollPane3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(addNewButton1)
-                    .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                        .add(moreButton)
-                        .add(addNewButton2)))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(moreButton)
+                    .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabel1)
+                    .add(jTextField2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jButton1)
+                    .add(printButton))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         add(jPanel2, java.awt.BorderLayout.CENTER);
@@ -223,14 +241,6 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
         // TODO add your handling code here:
     }//GEN-LAST:event_moreButtonMouseClicked
 
-    private void addNewButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addNewButton1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addNewButton1MouseClicked
-
-    private void addNewButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addNewButton2MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addNewButton2MouseClicked
-
     private void myAccountButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myAccountButtonMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_myAccountButtonMouseClicked
@@ -241,28 +251,8 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
         logOut.setVisible(true);
     }//GEN-LAST:event_logoutButtonMouseClicked
 
-    private void clickedButton2(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clickedButton2
-            addPassenger gui3 = new addPassenger();
-            addMedewerker gui2 = new addMedewerker();
-        if (beheer){
-            gui2.setVisible(true);
-        }else{
-            gui3.setVisible(true);
-        }
-    }//GEN-LAST:event_clickedButton2
-
-    private void clickedButton1(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clickedButton1
-        addLuggage gui = new addLuggage();
-        addMedewerker gui2 = new addMedewerker();
-        if (beheer){
-            gui2.setVisible(true);
-        }else{
-            gui.setVisible(true);
-        }
-    }//GEN-LAST:event_clickedButton1
-
     private void myAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myAccountButtonActionPerformed
-        
+
         passOverlay.pack();
         passOverlay.setVisible(true);
         passOverlay.setLocationRelativeTo(null);
@@ -278,10 +268,26 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     }//GEN-LAST:event_processedManagerActionPerformed
 
     private void graphManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graphManagerActionPerformed
-       ManagerGraph showGraph = new ManagerGraph(beheer);
-       showGraph.setVisible(true);
-       dispose();
+        ManagerGraph showGraph = new ManagerGraph(beheer);
+        showGraph.setVisible(true);
+        dispose();
     }//GEN-LAST:event_graphManagerActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void printButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printButtonActionPerformed
+        new printJob();
+    }//GEN-LAST:event_printButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -290,20 +296,23 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Manager(false).setVisible(true);
-                
+
             }
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addNewButton1;
-    private javax.swing.JButton addNewButton2;
     private javax.swing.JButton foundManager;
     private javax.swing.JButton graphManager;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JButton logoutButton;
     private javax.swing.JButton missingManager;
     private javax.swing.JButton myAccountButton;
+    private javax.swing.JToggleButton printButton;
     private javax.swing.JButton processedManager;
     private javax.swing.JTable tableResults;
     // End of variables declaration//GEN-END:variables

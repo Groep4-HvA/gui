@@ -123,6 +123,11 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
         showSelectedDate.setText("Show");
 
         printButton.setText("Print");
+        printButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                printButtonActionPerformed(evt);
+            }
+        });
 
         org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -135,7 +140,7 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
                 .add(logoutButton)
                 .addContainerGap())
             .add(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jPanel2Layout.createSequentialGroup()
                         .add(printButton)
@@ -157,7 +162,7 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
                             .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .add(graphManager))
                         .add(jLabel1)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -233,6 +238,10 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     private void endGraphActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endGraphActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_endGraphActionPerformed
+
+    private void printButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printButtonActionPerformed
+     new printJob();
+    }//GEN-LAST:event_printButtonActionPerformed
     public void mainManager(){
         Manager main = new Manager(beheer);
         main.setVisible(true);
