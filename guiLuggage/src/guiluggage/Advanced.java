@@ -15,6 +15,7 @@ public class Advanced extends javax.swing.JFrame {
      */
     public Advanced() {
         initComponents();
+        getRootPane().setDefaultButton(searchAdvanced);
     }
 
     /**

@@ -4,6 +4,8 @@
  */
 package guiluggage;
 
+import java.awt.Color;
+
 /**
  *
  * @author sean
@@ -71,6 +73,7 @@ public class MainGuiFrame extends java.awt.Frame {
         });
 
         searchInput.setColumns(20);
+        searchInput.setForeground(new java.awt.Color(102, 102, 102));
         searchInput.setRows(1);
         searchInput.setText("search");
         searchInput.setToolTipText("");
@@ -167,16 +170,8 @@ public class MainGuiFrame extends java.awt.Frame {
                 .add(searchButton)
                 .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .add(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(10, Short.MAX_VALUE)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jPanel2Layout.createSequentialGroup()
-                        .add(LabelDescription)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(appManagementButton)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(myAccountButton)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(logoutButton))
                     .add(jPanel2Layout.createSequentialGroup()
                         .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                             .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 931, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
@@ -188,7 +183,15 @@ public class MainGuiFrame extends java.awt.Frame {
                                     .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .add(moreButton))
                                 .add(jScrollPane3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 928, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                        .add(0, 0, Short.MAX_VALUE)))
+                        .add(0, 12, Short.MAX_VALUE))
+                    .add(jPanel2Layout.createSequentialGroup()
+                        .add(LabelDescription)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 395, Short.MAX_VALUE)
+                        .add(appManagementButton)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(myAccountButton)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(logoutButton)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -196,18 +199,21 @@ public class MainGuiFrame extends java.awt.Frame {
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                        .add(appManagementButton)
-                        .add(myAccountButton)
-                        .add(logoutButton))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, LabelDescription))
-                .add(18, 18, 18)
+                    .add(jPanel2Layout.createSequentialGroup()
+                        .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                            .add(appManagementButton)
+                            .add(myAccountButton)
+                            .add(logoutButton))
+                        .add(20, 20, 20))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .add(LabelDescription)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)))
                 .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(searchButton)
                     .add(advanced))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED, 15, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(jScrollPane3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -215,7 +221,7 @@ public class MainGuiFrame extends java.awt.Frame {
                     .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                         .add(moreButton)
                         .add(addNewButton2)))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         add(jPanel2, java.awt.BorderLayout.CENTER);
@@ -348,11 +354,16 @@ public class MainGuiFrame extends java.awt.Frame {
     }//GEN-LAST:event_tableResultsMouseClicked
 
     private void searchInputFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchInputFocusGained
+        Color black = new Color(0, 0, 0);
+        
         searchInput.setText("");
+        searchInput.setForeground(black);
     }//GEN-LAST:event_searchInputFocusGained
 
     private void searchInputFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchInputFocusLost
+        Color grey = new Color(142, 142, 142);
         searchInput.setText("search");
+        searchInput.setForeground(grey);
     }//GEN-LAST:event_searchInputFocusLost
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LabelDescription;
