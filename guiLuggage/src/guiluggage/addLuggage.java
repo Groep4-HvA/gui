@@ -42,26 +42,27 @@ public class addLuggage extends javax.swing.JFrame {
         jTextArea2 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("New luggage");
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("guiluggage/Bundle"); // NOI18N
+        setTitle(bundle.getString("addLuggage.title")); // NOI18N
 
-        label.setText("Label:");
+        label.setText(bundle.getString("addLuggage.label.text")); // NOI18N
 
-        color.setText("Color:");
+        color.setText(bundle.getString("addLuggage.color.text")); // NOI18N
 
-        shape.setText("Shape: ");
+        shape.setText(bundle.getString("addLuggage.shape.text")); // NOI18N
 
-        storageLocation.setText("Storage location: ");
+        storageLocation.setText(bundle.getString("addLuggage.storageLocation.text")); // NOI18N
 
-        adDetails.setText("Additional details: ");
+        adDetails.setText(bundle.getString("addLuggage.adDetails.text")); // NOI18N
 
-        Save.setText("Save");
+        Save.setText(bundle.getString("addLuggage.Save.text")); // NOI18N
         Save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SaveActionPerformed(evt);
             }
         });
 
-        cancel.setText("Cancel");
+        cancel.setText(bundle.getString("addLuggage.cancel.text")); // NOI18N
         cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelActionPerformed(evt);

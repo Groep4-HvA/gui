@@ -51,18 +51,19 @@ public class Advanced extends javax.swing.JFrame {
 
         advancedStatus.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Resolved", "Pending" }));
 
-        jLabel1.setText("Status:");
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("guiluggage/Bundle"); // NOI18N
+        jLabel1.setText(bundle.getString("Advanced.jLabel1.text")); // NOI18N
 
-        jLabel2.setText("Advanced Search");
+        jLabel2.setText(bundle.getString("Advanced.jLabel2.text")); // NOI18N
 
-        jLabel3.setText("Color:");
+        jLabel3.setText(bundle.getString("Advanced.jLabel3.text")); // NOI18N
 
-        jLabel4.setText("Name:");
+        jLabel4.setText(bundle.getString("Advanced.jLabel4.text")); // NOI18N
 
-        jLabel5.setText("Additional details:");
+        jLabel5.setText(bundle.getString("Advanced.jLabel5.text")); // NOI18N
 
-        searchAdvanced.setText("Search");
-        searchAdvanced.setActionCommand("searchAdvanced");
+        searchAdvanced.setText(bundle.getString("Advanced.searchAdvanced.text")); // NOI18N
+        searchAdvanced.setActionCommand(bundle.getString("Advanced.searchAdvanced.actionCommand")); // NOI18N
         searchAdvanced.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchAdvancedActionPerformed(evt);

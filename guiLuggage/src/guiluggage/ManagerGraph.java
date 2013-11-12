@@ -57,7 +57,8 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
             }
         });
 
-        myAccountButton.setText("My account");
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("guiluggage/Bundle"); // NOI18N
+        myAccountButton.setText(bundle.getString("ManagerGraph.myAccountButton.text")); // NOI18N
         myAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 myAccountButtonMouseClicked(evt);
@@ -69,41 +70,41 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
             }
         });
 
-        logoutButton.setText("Logout");
+        logoutButton.setText(bundle.getString("ManagerGraph.logoutButton.text")); // NOI18N
         logoutButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 logoutButtonMouseClicked(evt);
             }
         });
 
-        missingManager.setText("Missing");
+        missingManager.setText(bundle.getString("ManagerGraph.missingManager.text")); // NOI18N
         missingManager.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 missingManagerActionPerformed(evt);
             }
         });
 
-        foundManager.setText("Found");
+        foundManager.setText(bundle.getString("ManagerGraph.foundManager.text")); // NOI18N
         foundManager.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 foundManagerActionPerformed(evt);
             }
         });
 
-        processedManager.setText("Processed");
+        processedManager.setText(bundle.getString("ManagerGraph.processedManager.text")); // NOI18N
         processedManager.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 processedManagerActionPerformed(evt);
             }
         });
 
-        graphManager.setText("Graph");
+        graphManager.setText(bundle.getString("ManagerGraph.graphManager.text")); // NOI18N
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiluggage/Screenshot 2013-10-24 13.40.36.png"))); // NOI18N
-        jLabel1.setToolTipText("");
+        jLabel1.setToolTipText(bundle.getString("ManagerGraph.jLabel1.toolTipText")); // NOI18N
 
         beginGraph.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("d/M/yy"))));
-        beginGraph.setText("DD/MM/YYYY");
+        beginGraph.setText(bundle.getString("ManagerGraph.beginGraph.text")); // NOI18N
         beginGraph.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 beginGraphActionPerformed(evt);
@@ -111,18 +112,18 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
         });
 
         endGraph.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("d/M/yy"))));
-        endGraph.setText("DD/MM/YYYY");
+        endGraph.setText(bundle.getString("ManagerGraph.endGraph.text")); // NOI18N
         endGraph.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 endGraphActionPerformed(evt);
             }
         });
 
-        till.setText("till");
+        till.setText(bundle.getString("ManagerGraph.till.text")); // NOI18N
 
-        showSelectedDate.setText("Show");
+        showSelectedDate.setText(bundle.getString("ManagerGraph.showSelectedDate.text")); // NOI18N
 
-        printButton.setText("Print");
+        printButton.setText(bundle.getString("ManagerGraph.printButton.text")); // NOI18N
         printButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 printButtonActionPerformed(evt);

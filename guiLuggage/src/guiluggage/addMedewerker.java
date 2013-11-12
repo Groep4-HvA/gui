@@ -47,29 +47,30 @@ public class addMedewerker extends javax.swing.JFrame {
             }
         });
 
-        saveButton.setText("save");
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("guiluggage/Bundle"); // NOI18N
+        saveButton.setText(bundle.getString("addMedewerker.saveButton.text")); // NOI18N
         saveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveButtonActionPerformed(evt);
             }
         });
 
-        cancelButton.setText("cancel");
+        cancelButton.setText(bundle.getString("addMedewerker.cancelButton.text")); // NOI18N
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelButtonActionPerformed(evt);
             }
         });
 
-        jCheckBox1.setText("Applicatie beheerder");
+        jCheckBox1.setText(bundle.getString("addMedewerker.jCheckBox1.text")); // NOI18N
 
-        jLabel1.setText("Name");
+        jLabel1.setText(bundle.getString("addMedewerker.jLabel1.text")); // NOI18N
 
-        jLabel2.setText("Username");
+        jLabel2.setText(bundle.getString("addMedewerker.jLabel2.text")); // NOI18N
 
-        jLabel3.setText("Password");
+        jLabel3.setText(bundle.getString("addMedewerker.jLabel3.text")); // NOI18N
 
-        jLabel4.setText("Confirm Password");
+        jLabel4.setText(bundle.getString("addMedewerker.jLabel4.text")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

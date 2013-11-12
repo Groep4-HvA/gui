@@ -40,31 +40,32 @@ public class Popupappmedewerker extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Name");
-        jLabel1.setToolTipText("");
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("guiluggage/Bundle"); // NOI18N
+        jLabel1.setText(bundle.getString("Popupappmedewerker.jLabel1.text")); // NOI18N
+        jLabel1.setToolTipText(bundle.getString("Popupappmedewerker.jLabel1.toolTipText")); // NOI18N
 
-        jLabel3.setText("Username");
+        jLabel3.setText(bundle.getString("Popupappmedewerker.jLabel3.text")); // NOI18N
 
-        jLabel4.setText("Password");
+        jLabel4.setText(bundle.getString("Popupappmedewerker.jLabel4.text")); // NOI18N
 
-        jLabel5.setText("Confirm password");
+        jLabel5.setText(bundle.getString("Popupappmedewerker.jLabel5.text")); // NOI18N
 
-        saveButton.setText("Save");
+        saveButton.setText(bundle.getString("Popupappmedewerker.saveButton.text")); // NOI18N
         saveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveButtonActionPerformed(evt);
             }
         });
 
-        cancelButton.setText("Cancel");
+        cancelButton.setText(bundle.getString("Popupappmedewerker.cancelButton.text")); // NOI18N
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelButtonActionPerformed(evt);
             }
         });
 
-        jCheckBox1.setText("Systemadministrator");
-        jCheckBox1.setToolTipText("");
+        jCheckBox1.setText(bundle.getString("Popupappmedewerker.jCheckBox1.text")); // NOI18N
+        jCheckBox1.setToolTipText(bundle.getString("Popupappmedewerker.jCheckBox1.toolTipText")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

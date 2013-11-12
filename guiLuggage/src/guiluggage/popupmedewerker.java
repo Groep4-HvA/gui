@@ -67,29 +67,30 @@ public class popupmedewerker extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Luggage label");
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("guiluggage/Bundle"); // NOI18N
+        jLabel1.setText(bundle.getString("popupmedewerker.jLabel1.text")); // NOI18N
 
-        jLabel2.setText("Color");
+        jLabel2.setText(bundle.getString("popupmedewerker.jLabel2.text")); // NOI18N
 
-        jLabel3.setText("Shape");
+        jLabel3.setText(bundle.getString("popupmedewerker.jLabel3.text")); // NOI18N
 
-        jLabel4.setText("Name");
+        jLabel4.setText(bundle.getString("popupmedewerker.jLabel4.text")); // NOI18N
 
-        jLabel5.setText("Adress");
+        jLabel5.setText(bundle.getString("popupmedewerker.jLabel5.text")); // NOI18N
 
-        jLabel6.setText("Status");
+        jLabel6.setText(bundle.getString("popupmedewerker.jLabel6.text")); // NOI18N
 
-        jLabel7.setText("Lastname");
+        jLabel7.setText(bundle.getString("popupmedewerker.jLabel7.text")); // NOI18N
 
-        jLabel8.setText("Postalcode");
+        jLabel8.setText(bundle.getString("popupmedewerker.jLabel8.text")); // NOI18N
 
-        jLabel9.setText("City");
+        jLabel9.setText(bundle.getString("popupmedewerker.jLabel9.text")); // NOI18N
 
-        jLabel11.setText("Storage location");
+        jLabel11.setText(bundle.getString("popupmedewerker.jLabel11.text")); // NOI18N
 
-        jLabel13.setText("Aditional details");
+        jLabel13.setText(bundle.getString("popupmedewerker.jLabel13.text")); // NOI18N
 
-        jLabel10.setText("Residence adress");
+        jLabel10.setText(bundle.getString("popupmedewerker.jLabel10.text")); // NOI18N
 
         labelTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,32 +126,32 @@ public class popupmedewerker extends javax.swing.JFrame {
 
         statusDropDown.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Resolved", "Pending" }));
 
-        printButton.setText("Print");
+        printButton.setText(bundle.getString("popupmedewerker.printButton.text")); // NOI18N
         printButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 printButtonActionPerformed(evt);
             }
         });
 
-        saveButton.setText("Save");
+        saveButton.setText(bundle.getString("popupmedewerker.saveButton.text")); // NOI18N
         saveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveButtonActionPerformed(evt);
             }
         });
 
-        cancelButton.setText("Cancel");
+        cancelButton.setText(bundle.getString("popupmedewerker.cancelButton.text")); // NOI18N
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelButtonActionPerformed(evt);
             }
         });
 
-        jLabel12.setText("Address");
+        jLabel12.setText(bundle.getString("popupmedewerker.jLabel12.text")); // NOI18N
 
-        jLabel14.setText("Home adress");
+        jLabel14.setText(bundle.getString("popupmedewerker.jLabel14.text")); // NOI18N
 
-        jLabel15.setText("Postalcode");
+        jLabel15.setText(bundle.getString("popupmedewerker.jLabel15.text")); // NOI18N
 
         jTextField10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,7 +159,7 @@ public class popupmedewerker extends javax.swing.JFrame {
             }
         });
 
-        jLabel16.setText("City");
+        jLabel16.setText(bundle.getString("popupmedewerker.jLabel16.text")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -213,17 +214,16 @@ public class popupmedewerker extends javax.swing.JFrame {
                                     .addComponent(statusDropDown, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(colorTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 569, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(hAddressTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(shapeTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel14)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(lastNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(shapeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel14)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(lastNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                     .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)

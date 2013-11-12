@@ -41,21 +41,22 @@ public class logIn extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Username:");
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("guiluggage/Bundle"); // NOI18N
+        jLabel1.setText(bundle.getString("logIn.jLabel1.text")); // NOI18N
 
-        jLabel2.setText("Password: ");
+        jLabel2.setText(bundle.getString("logIn.jLabel2.text")); // NOI18N
 
-        LogIn.setText("Login");
+        LogIn.setText(bundle.getString("logIn.LogIn.text")); // NOI18N
         LogIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LogInActionPerformed(evt);
             }
         });
 
-        jLabel3.setText("Corendon Luggage System");
+        jLabel3.setText(bundle.getString("logIn.jLabel3.text")); // NOI18N
 
         errorLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        errorLabel.setText(" ");
+        errorLabel.setText(bundle.getString("logIn.errorLabel.text")); // NOI18N
         errorLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());

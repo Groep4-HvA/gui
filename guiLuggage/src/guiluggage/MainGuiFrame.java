@@ -64,8 +64,9 @@ public class MainGuiFrame extends java.awt.Frame {
             }
         });
 
-        advanced.setText("Advanced");
-        advanced.setToolTipText("Advanced search");
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("guiluggage/Bundle"); // NOI18N
+        advanced.setText(bundle.getString("MainGuiFrame.advanced.text")); // NOI18N
+        advanced.setToolTipText(bundle.getString("MainGuiFrame.advanced.toolTipText")); // NOI18N
         advanced.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 advancedActionPerformed(evt);
@@ -75,8 +76,8 @@ public class MainGuiFrame extends java.awt.Frame {
         searchInput.setColumns(20);
         searchInput.setForeground(new java.awt.Color(102, 102, 102));
         searchInput.setRows(1);
-        searchInput.setText("search");
-        searchInput.setToolTipText("");
+        searchInput.setText(bundle.getString("MainGuiFrame.searchInput.text")); // NOI18N
+        searchInput.setToolTipText(bundle.getString("MainGuiFrame.searchInput.toolTipText")); // NOI18N
         searchInput.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 searchInputFocusGained(evt);
@@ -87,7 +88,7 @@ public class MainGuiFrame extends java.awt.Frame {
         });
         jScrollPane1.setViewportView(searchInput);
 
-        searchButton.setText("Search");
+        searchButton.setText(bundle.getString("MainGuiFrame.searchButton.text")); // NOI18N
 
         addNewButton1.setText("Add new: " + button1);
         addNewButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -97,14 +98,14 @@ public class MainGuiFrame extends java.awt.Frame {
         });
 
         addNewButton2.setText("Add new: "+ button2);
-        addNewButton2.setToolTipText("");
+        addNewButton2.setToolTipText(bundle.getString("MainGuiFrame.addNewButton2.toolTipText")); // NOI18N
         addNewButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clickedButton2(evt);
             }
         });
 
-        moreButton.setText("More");
+        moreButton.setText(bundle.getString("MainGuiFrame.moreButton.text")); // NOI18N
         moreButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 moreButtonActionPerformed(evt);
@@ -135,29 +136,29 @@ public class MainGuiFrame extends java.awt.Frame {
         });
         jScrollPane3.setViewportView(tableResults);
 
-        appManagementButton.setText("Application management");
+        appManagementButton.setText(bundle.getString("MainGuiFrame.appManagementButton.text")); // NOI18N
         appManagementButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 appManagementButtonActionPerformed(evt);
             }
         });
 
-        myAccountButton.setText("My account");
+        myAccountButton.setText(bundle.getString("MainGuiFrame.myAccountButton.text")); // NOI18N
         myAccountButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 myAccountButtonActionPerformed(evt);
             }
         });
 
-        logoutButton.setText("Logout");
+        logoutButton.setText(bundle.getString("MainGuiFrame.logoutButton.text")); // NOI18N
         logoutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logoutButtonActionPerformed(evt);
             }
         });
 
-        LabelDescription.setText("Search label number:");
-        LabelDescription.setToolTipText("");
+        LabelDescription.setText(bundle.getString("MainGuiFrame.LabelDescription.text")); // NOI18N
+        LabelDescription.setToolTipText(bundle.getString("MainGuiFrame.LabelDescription.toolTipText")); // NOI18N
 
         org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

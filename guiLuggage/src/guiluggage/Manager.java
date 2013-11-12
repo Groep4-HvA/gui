@@ -62,7 +62,8 @@ public class Manager extends java.awt.Frame {
             }
         });
 
-        moreButton.setText("More");
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("guiluggage/Bundle"); // NOI18N
+        moreButton.setText(bundle.getString("Manager.moreButton.text")); // NOI18N
         moreButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 moreButtonMouseClicked(evt);
@@ -87,7 +88,7 @@ public class Manager extends java.awt.Frame {
         ));
         jScrollPane3.setViewportView(tableResults);
 
-        myAccountButton.setText("My account");
+        myAccountButton.setText(bundle.getString("Manager.myAccountButton.text")); // NOI18N
         myAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 myAccountButtonMouseClicked(evt);
@@ -99,64 +100,64 @@ public class Manager extends java.awt.Frame {
             }
         });
 
-        logoutButton.setText("Logout");
+        logoutButton.setText(bundle.getString("Manager.logoutButton.text")); // NOI18N
         logoutButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 logoutButtonMouseClicked(evt);
             }
         });
 
-        missingManager.setText("Missing");
+        missingManager.setText(bundle.getString("Manager.missingManager.text")); // NOI18N
         missingManager.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 missingManagerActionPerformed(evt);
             }
         });
 
-        foundManager.setText("Found");
+        foundManager.setText(bundle.getString("Manager.foundManager.text")); // NOI18N
 
-        processedManager.setText("Processed");
+        processedManager.setText(bundle.getString("Manager.processedManager.text")); // NOI18N
         processedManager.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 processedManagerActionPerformed(evt);
             }
         });
 
-        graphManager.setText("Graph");
+        graphManager.setText(bundle.getString("Manager.graphManager.text")); // NOI18N
         graphManager.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 graphManagerActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setText(bundle.getString("Manager.jLabel1.text")); // NOI18N
         jLabel1.setText("Found: 1");
 
-        jLabel2.setText("jLabel2");
+        jLabel2.setText(bundle.getString("Manager.jLabel2.text")); // NOI18N
         jLabel2.setText("Missing: 2");
 
-        jLabel3.setText("jLabel3");
+        jLabel3.setText(bundle.getString("Manager.jLabel3.text")); // NOI18N
         jLabel3.setText("Total: 3");
 
-        printButton.setText("Print");
+        printButton.setText(bundle.getString("Manager.printButton.text")); // NOI18N
         printButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 printButtonActionPerformed(evt);
             }
         });
 
-        jTextField1.setText("DD/MM/YYYY");
+        jTextField1.setText(bundle.getString("Manager.jTextField1.text")); // NOI18N
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
 
-        jLabel4.setText("till");
+        jLabel4.setText(bundle.getString("Manager.jLabel4.text")); // NOI18N
 
-        jTextField2.setText("DD/MM/YYYY");
+        jTextField2.setText(bundle.getString("Manager.jTextField2.text")); // NOI18N
 
-        jButton2.setText("Select");
+        jButton2.setText(bundle.getString("Manager.jButton2.text")); // NOI18N
 
         org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

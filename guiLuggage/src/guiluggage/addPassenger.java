@@ -68,48 +68,49 @@ public class addPassenger extends javax.swing.JFrame {
             }
         });
 
-        saveButton.setText("Save");
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("guiluggage/Bundle"); // NOI18N
+        saveButton.setText(bundle.getString("addPassenger.saveButton.text")); // NOI18N
         saveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveButtonActionPerformed(evt);
             }
         });
 
-        cancelButton.setText("Cancel");
+        cancelButton.setText(bundle.getString("addPassenger.cancelButton.text")); // NOI18N
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelButtonActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("Luggage label");
+        jLabel1.setText(bundle.getString("addPassenger.jLabel1.text")); // NOI18N
 
-        jLabel2.setText("Color");
+        jLabel2.setText(bundle.getString("addPassenger.jLabel2.text")); // NOI18N
 
-        jLabel3.setText("Shape");
+        jLabel3.setText(bundle.getString("addPassenger.jLabel3.text")); // NOI18N
 
-        jLabel4.setText("Name");
+        jLabel4.setText(bundle.getString("addPassenger.jLabel4.text")); // NOI18N
 
-        jLabel5.setText("Surname");
+        jLabel5.setText(bundle.getString("addPassenger.jLabel5.text")); // NOI18N
 
-        jLabel7.setText("Address");
+        jLabel7.setText(bundle.getString("addPassenger.jLabel7.text")); // NOI18N
 
-        jLabel8.setText("City");
+        jLabel8.setText(bundle.getString("addPassenger.jLabel8.text")); // NOI18N
 
-        jLabel9.setText("Postal code");
+        jLabel9.setText(bundle.getString("addPassenger.jLabel9.text")); // NOI18N
 
-        jLabel10.setText("Aditional ");
+        jLabel10.setText(bundle.getString("addPassenger.jLabel10.text")); // NOI18N
 
-        jLabel11.setText("details");
+        jLabel11.setText(bundle.getString("addPassenger.jLabel11.text")); // NOI18N
 
-        printButton.setText("Print");
+        printButton.setText(bundle.getString("addPassenger.printButton.text")); // NOI18N
         printButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 printButtonActionPerformed(evt);
             }
         });
 
-        jLabel13.setText("Resident address");
+        jLabel13.setText(bundle.getString("addPassenger.jLabel13.text")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

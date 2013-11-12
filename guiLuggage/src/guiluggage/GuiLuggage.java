@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
  * @author groep 4
  */
 public class GuiLuggage {
+    private static final ResourceBundle translation = ResourceBundle.getBundle("guiluggage/translation");
 
     /**
      * @param args the command line arguments
@@ -19,18 +20,18 @@ public class GuiLuggage {
         String country;
         
 //        if (args.length != 2) {
-            language = "en";
-            country = "US";
+//            language = translation.getString("EN");
+//            country = translation.getString("US");
 //        } else {
 //            language = args[0];
 //            country = args[1];
 //        }
         
         logIn login = new logIn();
-        currentLocale = new Locale(language, country);
-                
-//      messages = ResourceBundle.getBundle("translation", currentLocale);
-//      main.setName(messages.getString("greetings"));
+//        currentLocale = new Locale(language, country);
+//                
+//        messages = ResourceBundle.getBundle("translation", currentLocale);
+//        System.out.print(messages.getString("greetings"));
         login.setVisible(true);
         login.setLocationRelativeTo(null);
         
