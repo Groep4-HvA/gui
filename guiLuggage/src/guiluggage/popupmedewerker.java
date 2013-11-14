@@ -92,30 +92,6 @@ public class popupmedewerker extends javax.swing.JFrame {
 
         jLabel10.setText(bundle.getString("popupmedewerker.jLabel10.text")); // NOI18N
 
-        labelTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                labelTextFieldActionPerformed(evt);
-            }
-        });
-
-        shapeTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                shapeTextFieldActionPerformed(evt);
-            }
-        });
-
-        nameTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nameTextFieldActionPerformed(evt);
-            }
-        });
-
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
-            }
-        });
-
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
@@ -152,12 +128,6 @@ public class popupmedewerker extends javax.swing.JFrame {
         jLabel14.setText(bundle.getString("popupmedewerker.jLabel14.text")); // NOI18N
 
         jLabel15.setText(bundle.getString("popupmedewerker.jLabel15.text")); // NOI18N
-
-        jTextField10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField10ActionPerformed(evt);
-            }
-        });
 
         jLabel16.setText(bundle.getString("popupmedewerker.jLabel16.text")); // NOI18N
 
@@ -307,18 +277,6 @@ public class popupmedewerker extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void labelTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_labelTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_labelTextFieldActionPerformed
-
-    private void shapeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shapeTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_shapeTextFieldActionPerformed
-
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
-
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         dispose();
     }//GEN-LAST:event_cancelButtonActionPerformed
@@ -330,14 +288,6 @@ public class popupmedewerker extends javax.swing.JFrame {
     private void printButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printButtonActionPerformed
         new printJob();
     }//GEN-LAST:event_printButtonActionPerformed
-
-    private void nameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nameTextFieldActionPerformed
-
-    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField10ActionPerformed
 
     /**
      * @param args the command line arguments

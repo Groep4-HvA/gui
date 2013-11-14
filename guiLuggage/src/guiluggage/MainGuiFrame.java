@@ -16,21 +16,21 @@ public class MainGuiFrame extends java.awt.Frame {
     /**
      * Creates new form MainGuiFrame
      */
-    public String button1;
-    public String button2;
-    public boolean inBeheer = false;
-    public boolean beheer;
+    private String button1;
+    private String button2;
+    private boolean inBeheer = false;
+    private boolean beheer;
 
+    /**
+     *
+     * @param value
+     */
     public MainGuiFrame(boolean value) {
         beheer = value;
         button1 = "Luggage";
         button2 = "Passenger";
         initComponents();
-        if (beheer) {
-            appManagementButton.setVisible(true);
-        } else {
-            appManagementButton.setVisible(false);
-        }
+        appManagementButton.setVisible(beheer);
         searchInput.requestFocusInWindow();
 //        System.out.println("3+" + beheer);
     }
@@ -303,6 +303,8 @@ public class MainGuiFrame extends java.awt.Frame {
                 tableResults.getColumnModel().getColumn(2).setHeaderValue("Role");
                 tableResults.getColumnModel().getColumn(3).setHeaderValue("Date");
             }
+        }else{
+            System.out.print("You are not authorized!");
         }
     }//GEN-LAST:event_appManagementButtonActionPerformed
 
@@ -356,7 +358,6 @@ public class MainGuiFrame extends java.awt.Frame {
 
     private void searchInputFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchInputFocusGained
         Color black = new Color(0, 0, 0);
-        
         searchInput.setText("");
         searchInput.setForeground(black);
     }//GEN-LAST:event_searchInputFocusGained

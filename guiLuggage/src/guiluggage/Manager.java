@@ -19,13 +19,8 @@ public class Manager extends java.awt.Frame {
     public String button2;
 
     public Manager(boolean value) {
-        if (beheer) {
-            button1 = "Medewerker";
-            button2 = "Manager";
-        } else {
-            button1 = "Luggage";
-            button2 = "Passenger";
-        }
+        button1 = (beheer)?"Medewerker" : "Luggage";
+        button2 = (beheer)?"Manager"    : "Passenger";
         initComponents();
     }
 
@@ -64,11 +59,6 @@ public class Manager extends java.awt.Frame {
 
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("guiluggage/Bundle"); // NOI18N
         moreButton.setText(bundle.getString("Manager.moreButton.text")); // NOI18N
-        moreButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                moreButtonMouseClicked(evt);
-            }
-        });
         moreButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 moreButtonActionPerformed(evt);
@@ -89,11 +79,6 @@ public class Manager extends java.awt.Frame {
         jScrollPane3.setViewportView(tableResults);
 
         myAccountButton.setText(bundle.getString("Manager.myAccountButton.text")); // NOI18N
-        myAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                myAccountButtonMouseClicked(evt);
-            }
-        });
         myAccountButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 myAccountButtonActionPerformed(evt);
@@ -246,14 +231,6 @@ public class Manager extends java.awt.Frame {
         // TODO add your handling code here:
     }//GEN-LAST:event_moreButtonActionPerformed
 
-    private void moreButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_moreButtonMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_moreButtonMouseClicked
-
-    private void myAccountButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myAccountButtonMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_myAccountButtonMouseClicked
-
     private void logoutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseClicked
         dispose();
         logIn logOut = new logIn();
@@ -295,6 +272,7 @@ public class Manager extends java.awt.Frame {
      */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new Manager(false).setVisible(true);
 
