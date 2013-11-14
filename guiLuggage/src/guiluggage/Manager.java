@@ -4,23 +4,23 @@
  */
 package guiluggage;
 
+import models.printJob;
+import popups.PasswordConfirm;
+
 /**
  *
  * @author sean
  */
 public class Manager extends java.awt.Frame {
 
-    private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame(), true);
+    private PasswordConfirm passOverlay = new PasswordConfirm(new javax.swing.JFrame(), true);
     /**
      * Creates new form MainGuiFrame
      */
-    public boolean beheer;
-    public String button1;
-    public String button2;
+    private boolean beheer;
 
-    public Manager(boolean value) {
-        button1 = (beheer)?"Medewerker" : "Luggage";
-        button2 = (beheer)?"Manager"    : "Passenger";
+    public Manager(boolean beheer) {
+        beheer = this.beheer;
         initComponents();
     }
 
@@ -86,9 +86,9 @@ public class Manager extends java.awt.Frame {
         });
 
         logoutButton.setText(bundle.getString("Manager.logoutButton.text")); // NOI18N
-        logoutButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                logoutButtonMouseClicked(evt);
+        logoutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutButtonActionPerformed(evt);
             }
         });
 
@@ -132,11 +132,6 @@ public class Manager extends java.awt.Frame {
         });
 
         jTextField1.setText(bundle.getString("Manager.jTextField1.text")); // NOI18N
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
 
         jLabel4.setText(bundle.getString("Manager.jLabel4.text")); // NOI18N
 
@@ -231,18 +226,10 @@ public class Manager extends java.awt.Frame {
         // TODO add your handling code here:
     }//GEN-LAST:event_moreButtonActionPerformed
 
-    private void logoutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseClicked
-        dispose();
-        logIn logOut = new logIn();
-        logOut.setVisible(true);
-    }//GEN-LAST:event_logoutButtonMouseClicked
-
     private void myAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myAccountButtonActionPerformed
-
         passOverlay.pack();
         passOverlay.setVisible(true);
         passOverlay.setLocationRelativeTo(null);
-        // TODO add your handling code here:
     }//GEN-LAST:event_myAccountButtonActionPerformed
 
     private void missingManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_missingManagerActionPerformed
@@ -259,13 +246,15 @@ public class Manager extends java.awt.Frame {
         dispose();
     }//GEN-LAST:event_graphManagerActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
     private void printButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printButtonActionPerformed
-        new printJob();
+        printJob printJob = new printJob();
     }//GEN-LAST:event_printButtonActionPerformed
+
+    private void logoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtonActionPerformed
+        dispose();
+        logIn logOut = new logIn();
+        logOut.setVisible(true);
+    }//GEN-LAST:event_logoutButtonActionPerformed
 
     /**
      * @param args the command line arguments

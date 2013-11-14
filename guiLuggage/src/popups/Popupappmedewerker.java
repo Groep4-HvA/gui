@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package guiluggage;
+package popups;
 
 /**
  *
@@ -40,7 +40,7 @@ public class Popupappmedewerker extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("guiluggage/Bundle"); // NOI18N
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("popups/Bundle"); // NOI18N
         jLabel1.setText(bundle.getString("Popupappmedewerker.jLabel1.text")); // NOI18N
         jLabel1.setToolTipText(bundle.getString("Popupappmedewerker.jLabel1.toolTipText")); // NOI18N
 

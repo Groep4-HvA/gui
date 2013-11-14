@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package guiluggage;
+package popups;
 
 /**
  *
@@ -51,7 +51,7 @@ public class Advanced extends javax.swing.JFrame {
 
         advancedStatus.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Resolved", "Pending" }));
 
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("guiluggage/Bundle"); // NOI18N
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("popups/Bundle"); // NOI18N
         jLabel1.setText(bundle.getString("Advanced.jLabel1.text")); // NOI18N
 
         jLabel2.setText(bundle.getString("Advanced.jLabel2.text")); // NOI18N

@@ -2,21 +2,21 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package guiluggage;
+package popups;
 
 /**
  *
  * @author Yorick
  */
-public class addMedewerker extends javax.swing.JFrame {
+public class AddMedewerker extends javax.swing.JFrame {
 
     /**
-     * Creates new form addMedewerker
+     * Creates new form AddMedewerker
      */
-    public addMedewerker() {
+    public AddMedewerker() {
         initComponents();
     }
-    public static addMedewerker form = new addMedewerker();
+    public static AddMedewerker form = new AddMedewerker();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -47,30 +47,30 @@ public class addMedewerker extends javax.swing.JFrame {
             }
         });
 
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("guiluggage/Bundle"); // NOI18N
-        saveButton.setText(bundle.getString("addMedewerker.saveButton.text")); // NOI18N
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("popups/Bundle"); // NOI18N
+        saveButton.setText(bundle.getString("AddMedewerker.saveButton.text")); // NOI18N
         saveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveButtonActionPerformed(evt);
             }
         });
 
-        cancelButton.setText(bundle.getString("addMedewerker.cancelButton.text")); // NOI18N
+        cancelButton.setText(bundle.getString("AddMedewerker.cancelButton.text")); // NOI18N
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelButtonActionPerformed(evt);
             }
         });
 
-        jCheckBox1.setText(bundle.getString("addMedewerker.jCheckBox1.text")); // NOI18N
+        jCheckBox1.setText(bundle.getString("AddMedewerker.jCheckBox1.text")); // NOI18N
 
-        jLabel1.setText(bundle.getString("addMedewerker.jLabel1.text")); // NOI18N
+        jLabel1.setText(bundle.getString("AddMedewerker.jLabel1.text")); // NOI18N
 
-        jLabel2.setText(bundle.getString("addMedewerker.jLabel2.text")); // NOI18N
+        jLabel2.setText(bundle.getString("AddMedewerker.jLabel2.text")); // NOI18N
 
-        jLabel3.setText(bundle.getString("addMedewerker.jLabel3.text")); // NOI18N
+        jLabel3.setText(bundle.getString("AddMedewerker.jLabel3.text")); // NOI18N
 
-        jLabel4.setText(bundle.getString("addMedewerker.jLabel4.text")); // NOI18N
+        jLabel4.setText(bundle.getString("AddMedewerker.jLabel4.text")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -164,13 +164,13 @@ public class addMedewerker extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(addMedewerker.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddMedewerker.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(addMedewerker.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddMedewerker.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(addMedewerker.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddMedewerker.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(addMedewerker.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddMedewerker.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 

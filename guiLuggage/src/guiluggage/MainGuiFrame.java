@@ -4,6 +4,13 @@
  */
 package guiluggage;
 
+import popups.PasswordConfirm;
+import popups.Popupappmedewerker;
+import popups.addLuggage;
+import popups.Advanced;
+import popups.AddMedewerker;
+import popups.AddPassenger;
+import popups.PopUpMedewerker;
 import java.awt.Color;
 
 /**
@@ -12,7 +19,7 @@ import java.awt.Color;
  */
 public class MainGuiFrame extends java.awt.Frame {
 
-    private final passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame(), true);
+    private final PasswordConfirm passOverlay = new PasswordConfirm(new javax.swing.JFrame(), true);
     /**
      * Creates new form MainGuiFrame
      */
@@ -27,12 +34,11 @@ public class MainGuiFrame extends java.awt.Frame {
      */
     public MainGuiFrame(boolean value) {
         beheer = value;
-        button1 = "Luggage";
-        button2 = "Passenger";
+        button1 = (inBeheer)?"Medewerker" : "Luggage";
+        button2 = (inBeheer)?"Manager"    : "Passenger";
         initComponents();
         appManagementButton.setVisible(beheer);
         searchInput.requestFocusInWindow();
-//        System.out.println("3+" + beheer);
     }
 
     /**
@@ -309,8 +315,8 @@ public class MainGuiFrame extends java.awt.Frame {
     }//GEN-LAST:event_appManagementButtonActionPerformed
 
     private void clickedButton2(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clickedButton2
-        addPassenger gui3 = new addPassenger();
-        addMedewerker gui2 = new addMedewerker();
+        AddPassenger gui3 = new AddPassenger();
+        AddMedewerker gui2 = new AddMedewerker();
         if (inBeheer) {
             gui2.setVisible(true);
         } else {
@@ -320,7 +326,7 @@ public class MainGuiFrame extends java.awt.Frame {
 
     private void clickedButton1(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clickedButton1
         addLuggage gui = new addLuggage();
-        addMedewerker gui2 = new addMedewerker();
+        AddMedewerker gui2 = new AddMedewerker();
         if (inBeheer) {
             gui2.setVisible(true);
         } else {
@@ -351,7 +357,7 @@ public class MainGuiFrame extends java.awt.Frame {
             Popupappmedewerker popup1 = new Popupappmedewerker();
             popup1.setVisible(true);
         }else{
-            popupmedewerker popup = new popupmedewerker();
+            PopUpMedewerker popup = new PopUpMedewerker();
             popup.setVisible(true);
         }
     }//GEN-LAST:event_tableResultsMouseClicked

@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package guiluggage;
+package popups;
 
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
@@ -11,12 +11,12 @@ import java.awt.event.WindowEvent;
  *
  * @author workplz
  */
-public class passwordConfirm extends javax.swing.JDialog {
+public class PasswordConfirm extends javax.swing.JDialog {
 
     /**
-     * Creates new form passwordConfirm
+     * Creates new form PasswordConfirm
      */
-    public passwordConfirm(java.awt.Frame parent, boolean modal) {
+    public PasswordConfirm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         this.setUndecorated(true);
         initComponents();
@@ -139,13 +139,13 @@ public class passwordConfirm extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(passwordConfirm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PasswordConfirm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(passwordConfirm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PasswordConfirm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(passwordConfirm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PasswordConfirm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(passwordConfirm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PasswordConfirm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -153,7 +153,7 @@ public class passwordConfirm extends javax.swing.JDialog {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                passwordConfirm dialog = new passwordConfirm(new javax.swing.JFrame(), true);
+                PasswordConfirm dialog = new PasswordConfirm(new javax.swing.JFrame(), true);
                 dialog.setLocationRelativeTo(null);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     
