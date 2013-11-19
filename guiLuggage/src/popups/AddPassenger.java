@@ -2,18 +2,20 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package guiluggage;
+package popups;
+
+import models.printJob;
 
 /**
  *
  * @author User
  */
-public class addPassenger extends javax.swing.JFrame {
+public class AddPassenger extends javax.swing.JFrame {
 
     /**
-     * Creates new form addPassenger
+     * Creates new form AddPassenger
      */
-    public addPassenger() {
+    public AddPassenger() {
         initComponents();
     }
 
@@ -68,49 +70,49 @@ public class addPassenger extends javax.swing.JFrame {
             }
         });
 
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("guiluggage/Bundle"); // NOI18N
-        saveButton.setText(bundle.getString("addPassenger.saveButton.text")); // NOI18N
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("popups/Bundle"); // NOI18N
+        saveButton.setText(bundle.getString("AddPassenger.saveButton.text")); // NOI18N
         saveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveButtonActionPerformed(evt);
             }
         });
 
-        cancelButton.setText(bundle.getString("addPassenger.cancelButton.text")); // NOI18N
+        cancelButton.setText(bundle.getString("AddPassenger.cancelButton.text")); // NOI18N
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelButtonActionPerformed(evt);
             }
         });
 
-        jLabel1.setText(bundle.getString("addPassenger.jLabel1.text")); // NOI18N
+        jLabel1.setText(bundle.getString("AddPassenger.jLabel1.text")); // NOI18N
 
-        jLabel2.setText(bundle.getString("addPassenger.jLabel2.text")); // NOI18N
+        jLabel2.setText(bundle.getString("AddPassenger.jLabel2.text")); // NOI18N
 
-        jLabel3.setText(bundle.getString("addPassenger.jLabel3.text")); // NOI18N
+        jLabel3.setText(bundle.getString("AddPassenger.jLabel3.text")); // NOI18N
 
-        jLabel4.setText(bundle.getString("addPassenger.jLabel4.text")); // NOI18N
+        jLabel4.setText(bundle.getString("AddPassenger.jLabel4.text")); // NOI18N
 
-        jLabel5.setText(bundle.getString("addPassenger.jLabel5.text")); // NOI18N
+        jLabel5.setText(bundle.getString("AddPassenger.jLabel5.text")); // NOI18N
 
-        jLabel7.setText(bundle.getString("addPassenger.jLabel7.text")); // NOI18N
+        jLabel7.setText(bundle.getString("AddPassenger.jLabel7.text")); // NOI18N
 
-        jLabel8.setText(bundle.getString("addPassenger.jLabel8.text")); // NOI18N
+        jLabel8.setText(bundle.getString("AddPassenger.jLabel8.text")); // NOI18N
 
-        jLabel9.setText(bundle.getString("addPassenger.jLabel9.text")); // NOI18N
+        jLabel9.setText(bundle.getString("AddPassenger.jLabel9.text")); // NOI18N
 
-        jLabel10.setText(bundle.getString("addPassenger.jLabel10.text")); // NOI18N
+        jLabel10.setText(bundle.getString("AddPassenger.jLabel10.text")); // NOI18N
 
-        jLabel11.setText(bundle.getString("addPassenger.jLabel11.text")); // NOI18N
+        jLabel11.setText(bundle.getString("AddPassenger.jLabel11.text")); // NOI18N
 
-        printButton.setText(bundle.getString("addPassenger.printButton.text")); // NOI18N
+        printButton.setText(bundle.getString("AddPassenger.printButton.text")); // NOI18N
         printButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 printButtonActionPerformed(evt);
             }
         });
 
-        jLabel13.setText(bundle.getString("addPassenger.jLabel13.text")); // NOI18N
+        jLabel13.setText(bundle.getString("AddPassenger.jLabel13.text")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -259,20 +261,20 @@ public class addPassenger extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(addPassenger.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddPassenger.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(addPassenger.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddPassenger.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(addPassenger.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddPassenger.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(addPassenger.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddPassenger.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new addPassenger().setVisible(true);
+                new AddPassenger().setVisible(true);
             }
         });
     }

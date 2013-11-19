@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package guiluggage;
+package popups;
 
 /**
  *
@@ -45,24 +45,25 @@ public class addLuggage extends javax.swing.JFrame {
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("guiluggage/Bundle"); // NOI18N
         setTitle(bundle.getString("addLuggage.title")); // NOI18N
 
-        label.setText(bundle.getString("addLuggage.label.text")); // NOI18N
+        java.util.ResourceBundle bundle1 = java.util.ResourceBundle.getBundle("popups/Bundle"); // NOI18N
+        label.setText(bundle1.getString("addLuggage.label.text")); // NOI18N
 
-        color.setText(bundle.getString("addLuggage.color.text")); // NOI18N
+        color.setText(bundle1.getString("addLuggage.color.text")); // NOI18N
 
-        shape.setText(bundle.getString("addLuggage.shape.text")); // NOI18N
+        shape.setText(bundle1.getString("addLuggage.shape.text")); // NOI18N
 
-        storageLocation.setText(bundle.getString("addLuggage.storageLocation.text")); // NOI18N
+        storageLocation.setText(bundle1.getString("addLuggage.storageLocation.text")); // NOI18N
 
-        adDetails.setText(bundle.getString("addLuggage.adDetails.text")); // NOI18N
+        adDetails.setText(bundle1.getString("addLuggage.adDetails.text")); // NOI18N
 
-        Save.setText(bundle.getString("addLuggage.Save.text")); // NOI18N
+        Save.setText(bundle1.getString("addLuggage.Save.text")); // NOI18N
         Save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SaveActionPerformed(evt);
             }
         });
 
-        cancel.setText(bundle.getString("addLuggage.cancel.text")); // NOI18N
+        cancel.setText(bundle1.getString("addLuggage.cancel.text")); // NOI18N
         cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelActionPerformed(evt);

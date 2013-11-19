@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package guiluggage;
+package models;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -14,7 +14,7 @@ import java.awt.print.*;
  *
  * @author Sean
  */
-class printJob implements Printable{
+public class printJob implements Printable{
 
     public printJob(){
         PrinterJob job = PrinterJob.getPrinterJob(); //Get the printer's job list
@@ -25,7 +25,8 @@ class printJob implements Printable{
                 }
         }
     }
-public int print(Graphics gx, PageFormat pf, int page) throws PrinterException {
+    @Override
+    public int print(Graphics gx, PageFormat pf, int page) throws PrinterException {
 	if (page>0){return NO_SUCH_PAGE;} //Only one page
 	Graphics2D g = (Graphics2D)gx; //Cast to Graphics2D object
 	g.translate(pf.getImageableX(), pf.getImageableY()); //Match origins to imageable area

@@ -2,18 +2,20 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package guiluggage;
+package popups;
+
+import models.printJob;
 
 /**
  *
  * @author Jeroen
  */
-public class popupmedewerker extends javax.swing.JFrame {
+public class PopUpMedewerker extends javax.swing.JFrame {
 
     /**
-     * Creates new form popupmedewerker
+     * Creates new form PopUpMedewerker
      */
-    public popupmedewerker() {
+    public PopUpMedewerker() {
         initComponents();
     }
 
@@ -67,54 +69,30 @@ public class popupmedewerker extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("guiluggage/Bundle"); // NOI18N
-        jLabel1.setText(bundle.getString("popupmedewerker.jLabel1.text")); // NOI18N
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("popups/Bundle"); // NOI18N
+        jLabel1.setText(bundle.getString("PopUpMedewerker.jLabel1.text")); // NOI18N
 
-        jLabel2.setText(bundle.getString("popupmedewerker.jLabel2.text")); // NOI18N
+        jLabel2.setText(bundle.getString("PopUpMedewerker.jLabel2.text")); // NOI18N
 
-        jLabel3.setText(bundle.getString("popupmedewerker.jLabel3.text")); // NOI18N
+        jLabel3.setText(bundle.getString("PopUpMedewerker.jLabel3.text")); // NOI18N
 
-        jLabel4.setText(bundle.getString("popupmedewerker.jLabel4.text")); // NOI18N
+        jLabel4.setText(bundle.getString("PopUpMedewerker.jLabel4.text")); // NOI18N
 
-        jLabel5.setText(bundle.getString("popupmedewerker.jLabel5.text")); // NOI18N
+        jLabel5.setText(bundle.getString("PopUpMedewerker.jLabel5.text")); // NOI18N
 
-        jLabel6.setText(bundle.getString("popupmedewerker.jLabel6.text")); // NOI18N
+        jLabel6.setText(bundle.getString("PopUpMedewerker.jLabel6.text")); // NOI18N
 
-        jLabel7.setText(bundle.getString("popupmedewerker.jLabel7.text")); // NOI18N
+        jLabel7.setText(bundle.getString("PopUpMedewerker.jLabel7.text")); // NOI18N
 
-        jLabel8.setText(bundle.getString("popupmedewerker.jLabel8.text")); // NOI18N
+        jLabel8.setText(bundle.getString("PopUpMedewerker.jLabel8.text")); // NOI18N
 
-        jLabel9.setText(bundle.getString("popupmedewerker.jLabel9.text")); // NOI18N
+        jLabel9.setText(bundle.getString("PopUpMedewerker.jLabel9.text")); // NOI18N
 
-        jLabel11.setText(bundle.getString("popupmedewerker.jLabel11.text")); // NOI18N
+        jLabel11.setText(bundle.getString("PopUpMedewerker.jLabel11.text")); // NOI18N
 
-        jLabel13.setText(bundle.getString("popupmedewerker.jLabel13.text")); // NOI18N
+        jLabel13.setText(bundle.getString("PopUpMedewerker.jLabel13.text")); // NOI18N
 
-        jLabel10.setText(bundle.getString("popupmedewerker.jLabel10.text")); // NOI18N
-
-        labelTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                labelTextFieldActionPerformed(evt);
-            }
-        });
-
-        shapeTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                shapeTextFieldActionPerformed(evt);
-            }
-        });
-
-        nameTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nameTextFieldActionPerformed(evt);
-            }
-        });
-
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
-            }
-        });
+        jLabel10.setText(bundle.getString("PopUpMedewerker.jLabel10.text")); // NOI18N
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -126,40 +104,34 @@ public class popupmedewerker extends javax.swing.JFrame {
 
         statusDropDown.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Resolved", "Pending" }));
 
-        printButton.setText(bundle.getString("popupmedewerker.printButton.text")); // NOI18N
+        printButton.setText(bundle.getString("PopUpMedewerker.printButton.text")); // NOI18N
         printButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 printButtonActionPerformed(evt);
             }
         });
 
-        saveButton.setText(bundle.getString("popupmedewerker.saveButton.text")); // NOI18N
+        saveButton.setText(bundle.getString("PopUpMedewerker.saveButton.text")); // NOI18N
         saveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveButtonActionPerformed(evt);
             }
         });
 
-        cancelButton.setText(bundle.getString("popupmedewerker.cancelButton.text")); // NOI18N
+        cancelButton.setText(bundle.getString("PopUpMedewerker.cancelButton.text")); // NOI18N
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelButtonActionPerformed(evt);
             }
         });
 
-        jLabel12.setText(bundle.getString("popupmedewerker.jLabel12.text")); // NOI18N
+        jLabel12.setText(bundle.getString("PopUpMedewerker.jLabel12.text")); // NOI18N
 
-        jLabel14.setText(bundle.getString("popupmedewerker.jLabel14.text")); // NOI18N
+        jLabel14.setText(bundle.getString("PopUpMedewerker.jLabel14.text")); // NOI18N
 
-        jLabel15.setText(bundle.getString("popupmedewerker.jLabel15.text")); // NOI18N
+        jLabel15.setText(bundle.getString("PopUpMedewerker.jLabel15.text")); // NOI18N
 
-        jTextField10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField10ActionPerformed(evt);
-            }
-        });
-
-        jLabel16.setText(bundle.getString("popupmedewerker.jLabel16.text")); // NOI18N
+        jLabel16.setText(bundle.getString("PopUpMedewerker.jLabel16.text")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -307,18 +279,6 @@ public class popupmedewerker extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void labelTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_labelTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_labelTextFieldActionPerformed
-
-    private void shapeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shapeTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_shapeTextFieldActionPerformed
-
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
-
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         dispose();
     }//GEN-LAST:event_cancelButtonActionPerformed
@@ -330,14 +290,6 @@ public class popupmedewerker extends javax.swing.JFrame {
     private void printButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printButtonActionPerformed
         new printJob();
     }//GEN-LAST:event_printButtonActionPerformed
-
-    private void nameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nameTextFieldActionPerformed
-
-    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField10ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -356,20 +308,20 @@ public class popupmedewerker extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(popupmedewerker.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PopUpMedewerker.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(popupmedewerker.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PopUpMedewerker.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(popupmedewerker.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PopUpMedewerker.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(popupmedewerker.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PopUpMedewerker.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new popupmedewerker().setVisible(true);
+                new PopUpMedewerker().setVisible(true);
             }
         });
     }

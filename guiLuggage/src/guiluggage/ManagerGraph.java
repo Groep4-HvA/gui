@@ -4,29 +4,23 @@
  */
 package guiluggage;
 
+import models.printJob;
+import popups.PasswordConfirm;
+
 
 /**
  *
  * @author sean
  */
 public class ManagerGraph extends java.awt.Frame {
-private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame(),true);
+private PasswordConfirm passOverlay = new PasswordConfirm(new javax.swing.JFrame(),true);
     /**
      * Creates new form MainGuiFrame
      */
-    public boolean beheer;
-    public String button1;
-    public String button2;
+    private boolean beheer;
     
     public ManagerGraph(boolean value) {
         beheer = value;
-        if (beheer){
-            button1 = "Medewerker";
-            button2 = "Manager";
-        }else{
-            button1 = "Luggage";
-            button2 = "Passenger";
-        }
         initComponents();
     }
     /**
@@ -59,11 +53,6 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
 
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("guiluggage/Bundle"); // NOI18N
         myAccountButton.setText(bundle.getString("ManagerGraph.myAccountButton.text")); // NOI18N
-        myAccountButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                myAccountButtonMouseClicked(evt);
-            }
-        });
         myAccountButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 myAccountButtonActionPerformed(evt);
@@ -205,10 +194,6 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
         System.exit(0);
     }//GEN-LAST:event_exitForm
 
-    private void myAccountButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myAccountButtonMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_myAccountButtonMouseClicked
-
     private void logoutButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutButtonMouseClicked
         dispose();
         logIn logOut = new logIn();
@@ -216,11 +201,9 @@ private passwordConfirm passOverlay = new passwordConfirm(new javax.swing.JFrame
     }//GEN-LAST:event_logoutButtonMouseClicked
 
     private void myAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myAccountButtonActionPerformed
-        
         passOverlay.pack();
         passOverlay.setVisible(true);
         passOverlay.setLocationRelativeTo(null);
-        // TODO add your handling code here:
     }//GEN-LAST:event_myAccountButtonActionPerformed
 
     private void missingManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_missingManagerActionPerformed
