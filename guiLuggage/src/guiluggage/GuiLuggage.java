@@ -19,7 +19,7 @@ public class GuiLuggage {
         english = new Locale("en", "US");
         dutch = new Locale("nl", "NL");
         
-        Locale.setDefault(english);
+        Locale.setDefault(dutch);
         
         current = Locale.getDefault();
         System.out.println("Current language: "+current.toString());
