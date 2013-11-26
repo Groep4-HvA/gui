@@ -146,18 +146,6 @@ public class MainGuiFrame extends java.awt.Frame {
             }
         });
 
-        tableResults.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"ASL19MNL", "found", "grey", "29/10/2013"},
-                {"ASL21FTR", "missing", "black", "4/11/2013"},
-                {"ASL9FUSA", "missing", "white", "1/11/2013"},
-                {null, null, null, null},
-                {null, "", null, null}
-            },
-            new String [] {
-                "label", "status", "color", "date"
-            }
-        ));
         tableResults.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tableResultsMouseClicked(evt);
@@ -169,10 +157,6 @@ public class MainGuiFrame extends java.awt.Frame {
             }
         });
         jScrollPane3.setViewportView(tableResults);
-        tableResults.getColumnModel().getColumn(0).setHeaderValue(bundle.getString("MainGuiFrame.tableResults.columnModel.title0")); // NOI18N
-        tableResults.getColumnModel().getColumn(1).setHeaderValue(bundle.getString("MainGuiFrame.tableResults.columnModel.title1")); // NOI18N
-        tableResults.getColumnModel().getColumn(2).setHeaderValue(bundle.getString("MainGuiFrame.tableResults.columnModel.title2")); // NOI18N
-        tableResults.getColumnModel().getColumn(3).setHeaderValue(bundle.getString("MainGuiFrame.tableResults.columnModel.title3")); // NOI18N
 
         appManagementButton.setText(bundle.getString("MainGuiFrame.appManagementButton.text")); // NOI18N
         appManagementButton.addActionListener(new java.awt.event.ActionListener() {
@@ -252,7 +236,7 @@ public class MainGuiFrame extends java.awt.Frame {
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(searchButton)
                     .add(advanced))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED, 14, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED, 24, Short.MAX_VALUE)
                 .add(jScrollPane3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -260,7 +244,7 @@ public class MainGuiFrame extends java.awt.Frame {
                     .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                         .add(moreButton)
                         .add(addNewButton2)))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         add(jPanel2, java.awt.BorderLayout.CENTER);

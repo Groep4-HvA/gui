@@ -4,11 +4,26 @@
  */
 package popups;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Yorick
  */
 public class AddMedewerker extends javax.swing.JFrame {
+
+    private Connection con = null;
+    private Statement st = null;
+    private PreparedStatement ps = null;
+    private ResultSet rs = null;
+    private String url = "jdbc:mysql://159.253.0.5:3306/seanmoy58_hva";
+    private String user = "seanmoy58_hva";
+    private String pw = "cWCl7Itb";
 
     /**
      * Creates new form AddMedewerker
@@ -17,6 +32,7 @@ public class AddMedewerker extends javax.swing.JFrame {
         initComponents();
     }
     public static AddMedewerker form = new AddMedewerker();
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -140,6 +156,41 @@ public class AddMedewerker extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
+
+        String name = jTextField1.getText();
+        String uName = jTextField2.getText();
+        String pWord = jPasswordField1.getText();
+        String confirmPWord = jPasswordField2.getText();
+
+        if (pWord == null ? confirmPWord == null : pWord.equals(confirmPWord)) {
+
+
+            int sysAdmin = 0;
+
+            if (jCheckBox1.isSelected()) {
+                sysAdmin = 1;
+            }
+
+            try {
+                con = DriverManager.getConnection(url, user, pw);
+                ps = con.prepareStatement("INSERT INTO `Users` (userRealName, userName, userPass, userBeheer) values (?, ?, ?, ?)");
+
+                ps.setString(1, name);
+                ps.setString(2, uName);
+                ps.setString(3, pWord);
+                ps.setInt(4, sysAdmin);
+
+                ps.executeUpdate();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Passwords do not match");
+            // fixen dat scherm niet weggaat
+        }
+
+
+
         dispose();
     }//GEN-LAST:event_saveButtonActionPerformed
 
