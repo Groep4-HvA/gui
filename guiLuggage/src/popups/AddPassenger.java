@@ -5,6 +5,10 @@
 package popups;
 
 import models.printJob;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.PreparedStatement;
 
 /**
  *
@@ -12,11 +16,21 @@ import models.printJob;
  */
 public class AddPassenger extends javax.swing.JFrame {
 
+    private Connection con = null;
+    private PreparedStatement ps = null;
+    private ResultSet rs = null;
+
+    private String url = "jdbc:mysql://159.253.0.5:3306/seanmoy58_hva";
+    private String user = "seanmoy58_hva";
+    private String pw = "cWCl7Itb";
+
     /**
      * Creates new form AddPassenger
      */
     public AddPassenger() {
+        super("Add passenger");
         initComponents();
+
     }
 
     /**
@@ -229,11 +243,32 @@ public class AddPassenger extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField4ActionPerformed
 
     private void printButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printButtonActionPerformed
-       new printJob();
+        new printJob();
     }//GEN-LAST:event_printButtonActionPerformed
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
-        dispose();
+        try {
+            //Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            con = DriverManager.getConnection(url, user, pw);
+            //ps = con.prepareStatement("INSERT INTO  `seanmoy58_hva`.`passengers` (`name` ,`surname` ,`city`) VALUES (?, ?, ?);");
+            //ps.executeQuery();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+
+            try {
+
+                if (con != null) {
+                    con.close();
+                }
+                
+                if(ps != null){
+                    ps.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }//GEN-LAST:event_saveButtonActionPerformed
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
