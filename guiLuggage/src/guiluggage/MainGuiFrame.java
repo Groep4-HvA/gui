@@ -115,6 +115,11 @@ public class MainGuiFrame extends java.awt.Frame {
                 searchInputFocusLost(evt);
             }
         });
+        searchInput.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                searchInputKeyPressed(evt);
+            }
+        });
         jScrollPane1.setViewportView(searchInput);
 
         searchButton.setText(bundle.getString("MainGuiFrame.searchButton.text")); // NOI18N
@@ -345,14 +350,36 @@ public class MainGuiFrame extends java.awt.Frame {
     }//GEN-LAST:event_searchInputFocusGained
 
     private void searchInputFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchInputFocusLost
+       /*
         Color grey = new Color(142, 142, 142);
         searchInput.setText("search");
         searchInput.setForeground(grey);
+        */
     }//GEN-LAST:event_searchInputFocusLost
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
-        searchInput.getText();
+        //String search = searchInput.getText();
+        System.out.println(searchInput.getText());
+        try{
+            con = DriverManager.getConnection(url, user, pw);
+            String sql = "SELECT * FROM luggage WHERE `labelNumber` LIKE '%" + searchInput.getText() + "%' OR `color` LIKE '%" + searchInput.getText() + "%' OR `shape` LIKE '%" + searchInput.getText() + "%' OR `storageLocation` LIKE '%" + searchInput.getText() + "%' OR `status` LIKE '%" + searchInput.getText() + "%'";
+            
+            ps = con.prepareStatement(sql); // SELECT * FROM luggage WHERE labelNumber LIKE '%"+ searchInput.getText() +"%';
+            rs = ps.executeQuery();
+            tableResults.setModel(DbUtils.resultSetToTableModel(rs));
+            
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_searchButtonActionPerformed
+
+    private void searchInputKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchInputKeyPressed
+        // TO CODE HERE <!- CODE -!>
+        /*
+         * here the enter code to come/ if enter pressed in search it goes to searching instead of making a new line. 
+         * it's not that difficult and should be written in this method and make use of the evt parameter. ok. i love you. ok
+         */
+    }//GEN-LAST:event_searchInputKeyPressed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LabelDescription;
