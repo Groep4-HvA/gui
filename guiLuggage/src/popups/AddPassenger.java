@@ -5,10 +5,6 @@
 package popups;
 
 import models.printJob;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.PreparedStatement;
 
 /**
  *
@@ -16,21 +12,11 @@ import java.sql.PreparedStatement;
  */
 public class AddPassenger extends javax.swing.JFrame {
 
-    private Connection con = null;
-    private PreparedStatement ps = null;
-    private ResultSet rs = null;
-
-    private String url = "jdbc:mysql://159.253.0.5:3306/seanmoy58_hva";
-    private String user = "seanmoy58_hva";
-    private String pw = "cWCl7Itb";
-
     /**
      * Creates new form AddPassenger
      */
     public AddPassenger() {
-        super("Add passenger");
         initComponents();
-
     }
 
     /**
@@ -243,58 +229,11 @@ public class AddPassenger extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField4ActionPerformed
 
     private void printButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printButtonActionPerformed
-        new printJob();
+       new printJob();
     }//GEN-LAST:event_printButtonActionPerformed
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
-        
-        String label = jTextField1.getText();
-        String kleur = jTextField2.getText();
-        String vorm = jTextField3.getText();
-        String name = jTextField5.getText();
-        String surName = jTextField6.getText();
-        String adres = jTextField7.getText();
-        String rAdres = jTextField8.getText();
-        String pCode = jTextField9.getText();
-        String stad = jTextField10.getText();
-        String aDetails = jTextField11.getText();
-        
-        
-         try {
-            con = DriverManager.getConnection(url, user, pw);
-            ps = con.prepareStatement("INSERT INTO  `seanmoy58_hva`.`passengers` (`name` ,`surname` ,`homeAddress`, `homePostalCode`, `homeCity`, `residentAddress`, `color`, `shape`, `additionalDetails`, `labelNumber`)VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
-            
-            ps.setString(1, name);
-            ps.setString(2, surName);
-            ps.setString(3, adres);
-            ps.setString(4, pCode);
-            ps.setString(5, stad);
-            ps.setString(6, rAdres);
-            ps.setString(7, kleur);
-            ps.setString(8, vorm);
-            ps.setString(9, aDetails);
-            ps.setString(10, label);
-            
-            ps.executeUpdate();
-            
-            dispose();
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        } finally {
-
-            try {
-
-                if (con != null) {
-                    con.close();
-                }
-                
-                if(ps != null){
-                    ps.close();
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        } 
+        dispose();
     }//GEN-LAST:event_saveButtonActionPerformed
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed

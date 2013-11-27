@@ -4,7 +4,6 @@
  */
 package popups;
 
-import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 
@@ -43,7 +42,6 @@ public class PasswordConfirm extends javax.swing.JDialog {
         cancelBut = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setText("Language: ");
 

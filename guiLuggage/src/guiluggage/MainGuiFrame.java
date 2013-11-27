@@ -12,12 +12,6 @@ import popups.AddMedewerker;
 import popups.AddPassenger;
 import popups.PopUpMedewerker;
 import java.awt.Color;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -26,16 +20,9 @@ import net.proteanit.sql.DbUtils;
 public class MainGuiFrame extends java.awt.Frame {
 
     private final PasswordConfirm passOverlay = new PasswordConfirm(new javax.swing.JFrame(), true);
-   /**
+    /**
      * Creates new form MainGuiFrame
      */
-    private Connection con = null;
-    private Statement st = null;
-    private PreparedStatement ps = null;
-    private ResultSet rs = null;
-    private String url = "jdbc:mysql://159.253.0.5:3306/seanmoy58_hva";
-    private String user = "seanmoy58_hva";
-    private String pw = "cWCl7Itb";
     private String button1;
     private String button2;
     private boolean inBeheer = false;
@@ -47,21 +34,11 @@ public class MainGuiFrame extends java.awt.Frame {
      */
     public MainGuiFrame(boolean value) {
         beheer = value;
-        button1 = (inBeheer) ? "Medewerker" : "Luggage";
-        button2 = (inBeheer) ? "Manager" : "Passenger";
+        button1 = (inBeheer)?"Medewerker" : "Luggage";
+        button2 = (inBeheer)?"Manager"    : "Passenger";
         initComponents();
         appManagementButton.setVisible(beheer);
         searchInput.requestFocusInWindow();
-        try {
-            con = DriverManager.getConnection(url, user, pw);
-            String sql = "select * from `luggage`";
-            ps = con.prepareStatement(sql);
-            rs = ps.executeQuery();
-            tableResults.setModel(DbUtils.resultSetToTableModel(rs));
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-
     }
 
     /**
@@ -115,19 +92,9 @@ public class MainGuiFrame extends java.awt.Frame {
                 searchInputFocusLost(evt);
             }
         });
-        searchInput.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                searchInputKeyPressed(evt);
-            }
-        });
         jScrollPane1.setViewportView(searchInput);
 
         searchButton.setText(bundle.getString("MainGuiFrame.searchButton.text")); // NOI18N
-        searchButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchButtonActionPerformed(evt);
-            }
-        });
 
         addNewButton1.setText("Add new: " + button1);
         addNewButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -151,6 +118,18 @@ public class MainGuiFrame extends java.awt.Frame {
             }
         });
 
+        tableResults.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"ASL19MNL", "found", "grey", "29/10/2013"},
+                {"ASL21FTR", "missing", "black", "4/11/2013"},
+                {"ASL9FUSA", "missing", "white", "1/11/2013"},
+                {null, null, null, null},
+                {null, "", null, null}
+            },
+            new String [] {
+                "label", "status", "color", "date"
+            }
+        ));
         tableResults.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tableResultsMouseClicked(evt);
@@ -198,7 +177,7 @@ public class MainGuiFrame extends java.awt.Frame {
                 .add(searchButton)
                 .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .add(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(10, Short.MAX_VALUE)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jPanel2Layout.createSequentialGroup()
                         .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
@@ -211,7 +190,7 @@ public class MainGuiFrame extends java.awt.Frame {
                                     .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .add(moreButton))
                                 .add(jScrollPane3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 928, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                        .add(0, 8, Short.MAX_VALUE))
+                        .add(0, 12, Short.MAX_VALUE))
                     .add(jPanel2Layout.createSequentialGroup()
                         .add(LabelDescription)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 395, Short.MAX_VALUE)
@@ -241,7 +220,7 @@ public class MainGuiFrame extends java.awt.Frame {
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(searchButton)
                     .add(advanced))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED, 24, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(jScrollPane3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -249,7 +228,7 @@ public class MainGuiFrame extends java.awt.Frame {
                     .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                         .add(moreButton)
                         .add(addNewButton2)))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         add(jPanel2, java.awt.BorderLayout.CENTER);
@@ -281,16 +260,56 @@ public class MainGuiFrame extends java.awt.Frame {
                 addNewButton2.setText("Add new: " + button2);
                 appManagementButton.setText("Application Management");
                 LabelDescription.setText("Search labelnumber:");
-
+                
+                // first row
+                tableResults.getModel().setValueAt("ASL19MNL", 0, 0);
+                tableResults.getModel().setValueAt("found", 0, 1);
+                tableResults.getModel().setValueAt("grey", 0, 2);
+                tableResults.getModel().setValueAt("29/10/2013", 0, 3);
+                // second row
+                tableResults.getModel().setValueAt("ASL21FTR", 1, 0);
+                tableResults.getModel().setValueAt("missing", 1, 1);
+                tableResults.getModel().setValueAt("black", 1, 2);
+                tableResults.getModel().setValueAt("4//11/2013", 1, 3);
+                // third row
+                tableResults.getModel().setValueAt("ASL9FUSA", 2, 0);
+                tableResults.getModel().setValueAt("missing", 2, 1);
+                tableResults.getModel().setValueAt("white", 2, 2);
+                tableResults.getModel().setValueAt("1//11/2013", 2, 3);
+                
+                tableResults.getColumnModel().getColumn(0).setHeaderValue("Label");
+                tableResults.getColumnModel().getColumn(1).setHeaderValue("Status");
+                tableResults.getColumnModel().getColumn(2).setHeaderValue("Color");
+                tableResults.getColumnModel().getColumn(3).setHeaderValue("Date");
             } else {
                 inBeheer = true;
                 addNewButton1.setText("Add new: Manager");
                 addNewButton2.setText("Add new: Medewerker");
                 appManagementButton.setText("Overzicht");
                 LabelDescription.setText("Search name:");
-
+                
+                // first row
+                tableResults.getModel().setValueAt("Chris", 0, 0);
+                tableResults.getModel().setValueAt("V.d heijden", 0, 1);
+                tableResults.getModel().setValueAt("Medewerker", 0, 2);
+                tableResults.getModel().setValueAt("10/10/2012", 0, 3);
+                // second row
+                tableResults.getModel().setValueAt("Sean", 1, 0);
+                tableResults.getModel().setValueAt("Molenaar", 1, 1);
+                tableResults.getModel().setValueAt("Manager", 1, 2);
+                tableResults.getModel().setValueAt("01/01/2009", 1, 3);
+                // third row
+                tableResults.getModel().setValueAt("Fatih", 2, 0);
+                tableResults.getModel().setValueAt("Cigirci", 2, 1);
+                tableResults.getModel().setValueAt("Sys. Admin", 2, 2);
+                tableResults.getModel().setValueAt("05/04/2005", 2, 3);
+                
+                tableResults.getColumnModel().getColumn(0).setHeaderValue("Name");
+                tableResults.getColumnModel().getColumn(1).setHeaderValue("Achternaam");
+                tableResults.getColumnModel().getColumn(2).setHeaderValue("Role");
+                tableResults.getColumnModel().getColumn(3).setHeaderValue("Date");
             }
-        } else {
+        }else{
             System.out.print("You are not authorized!");
         }
     }//GEN-LAST:event_appManagementButtonActionPerformed
@@ -337,7 +356,7 @@ public class MainGuiFrame extends java.awt.Frame {
         if (inBeheer) {
             Popupappmedewerker popup1 = new Popupappmedewerker();
             popup1.setVisible(true);
-        } else {
+        }else{
             PopUpMedewerker popup = new PopUpMedewerker();
             popup.setVisible(true);
         }
@@ -350,37 +369,10 @@ public class MainGuiFrame extends java.awt.Frame {
     }//GEN-LAST:event_searchInputFocusGained
 
     private void searchInputFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchInputFocusLost
-       /*
         Color grey = new Color(142, 142, 142);
         searchInput.setText("search");
         searchInput.setForeground(grey);
-        */
     }//GEN-LAST:event_searchInputFocusLost
-
-    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
-        //String search = searchInput.getText();
-        System.out.println(searchInput.getText());
-        try{
-            con = DriverManager.getConnection(url, user, pw);
-            String sql = "SELECT * FROM luggage WHERE `labelNumber` LIKE '%" + searchInput.getText() + "%' OR `color` LIKE '%" + searchInput.getText() + "%' OR `shape` LIKE '%" + searchInput.getText() + "%' OR `storageLocation` LIKE '%" + searchInput.getText() + "%' OR `status` LIKE '%" + searchInput.getText() + "%'";
-            
-            ps = con.prepareStatement(sql); // SELECT * FROM luggage WHERE labelNumber LIKE '%"+ searchInput.getText() +"%';
-            rs = ps.executeQuery();
-            tableResults.setModel(DbUtils.resultSetToTableModel(rs));
-            
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-    }//GEN-LAST:event_searchButtonActionPerformed
-
-    private void searchInputKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchInputKeyPressed
-        // TO CODE HERE <!- CODE -!>
-        /*
-         * here the enter code to come/ if enter pressed in search it goes to searching instead of making a new line. 
-         * it's not that difficult and should be written in this method and make use of the evt parameter. ok. i love you. ok
-         */
-    }//GEN-LAST:event_searchInputKeyPressed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LabelDescription;
     private javax.swing.JButton addNewButton1;
