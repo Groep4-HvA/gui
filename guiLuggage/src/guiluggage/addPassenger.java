@@ -2,35 +2,19 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package popups;
-
-import models.printJob;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.PreparedStatement;
+package guiluggage;
 
 /**
  *
  * @author User
  */
-public class AddPassenger extends javax.swing.JFrame {
-
-    private Connection con = null;
-    private PreparedStatement ps = null;
-    private ResultSet rs = null;
-
-    private String url = "jdbc:mysql://159.253.0.5:3306/seanmoy58_hva";
-    private String user = "seanmoy58_hva";
-    private String pw = "cWCl7Itb";
+public class addPassenger extends javax.swing.JFrame {
 
     /**
-     * Creates new form AddPassenger
+     * Creates new form addPassenger
      */
-    public AddPassenger() {
-        super("Add passenger");
+    public addPassenger() {
         initComponents();
-
     }
 
     /**
@@ -84,49 +68,48 @@ public class AddPassenger extends javax.swing.JFrame {
             }
         });
 
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("popups/Bundle"); // NOI18N
-        saveButton.setText(bundle.getString("AddPassenger.saveButton.text")); // NOI18N
+        saveButton.setText("Save");
         saveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveButtonActionPerformed(evt);
             }
         });
 
-        cancelButton.setText(bundle.getString("AddPassenger.cancelButton.text")); // NOI18N
+        cancelButton.setText("Cancel");
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelButtonActionPerformed(evt);
             }
         });
 
-        jLabel1.setText(bundle.getString("AddPassenger.jLabel1.text")); // NOI18N
+        jLabel1.setText("Luggage label");
 
-        jLabel2.setText(bundle.getString("AddPassenger.jLabel2.text")); // NOI18N
+        jLabel2.setText("Color");
 
-        jLabel3.setText(bundle.getString("AddPassenger.jLabel3.text")); // NOI18N
+        jLabel3.setText("Shape");
 
-        jLabel4.setText(bundle.getString("AddPassenger.jLabel4.text")); // NOI18N
+        jLabel4.setText("Name");
 
-        jLabel5.setText(bundle.getString("AddPassenger.jLabel5.text")); // NOI18N
+        jLabel5.setText("Surname");
 
-        jLabel7.setText(bundle.getString("AddPassenger.jLabel7.text")); // NOI18N
+        jLabel7.setText("Address");
 
-        jLabel8.setText(bundle.getString("AddPassenger.jLabel8.text")); // NOI18N
+        jLabel8.setText("City");
 
-        jLabel9.setText(bundle.getString("AddPassenger.jLabel9.text")); // NOI18N
+        jLabel9.setText("Postal code");
 
-        jLabel10.setText(bundle.getString("AddPassenger.jLabel10.text")); // NOI18N
+        jLabel10.setText("Aditional ");
 
-        jLabel11.setText(bundle.getString("AddPassenger.jLabel11.text")); // NOI18N
+        jLabel11.setText("details");
 
-        printButton.setText(bundle.getString("AddPassenger.printButton.text")); // NOI18N
+        printButton.setText("Print");
         printButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 printButtonActionPerformed(evt);
             }
         });
 
-        jLabel13.setText(bundle.getString("AddPassenger.jLabel13.text")); // NOI18N
+        jLabel13.setText("Resident address");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -243,58 +226,11 @@ public class AddPassenger extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField4ActionPerformed
 
     private void printButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printButtonActionPerformed
-        new printJob();
+       new printJob();
     }//GEN-LAST:event_printButtonActionPerformed
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
-        
-        String label = jTextField1.getText();
-        String kleur = jTextField2.getText();
-        String vorm = jTextField3.getText();
-        String name = jTextField5.getText();
-        String surName = jTextField6.getText();
-        String adres = jTextField7.getText();
-        String rAdres = jTextField8.getText();
-        String pCode = jTextField9.getText();
-        String stad = jTextField10.getText();
-        String aDetails = jTextField11.getText();
-        
-        
-         try {
-            con = DriverManager.getConnection(url, user, pw);
-            ps = con.prepareStatement("INSERT INTO  `seanmoy58_hva`.`passengers` (`name` ,`surname` ,`homeAddress`, `homePostalCode`, `homeCity`, `residentAddress`, `color`, `shape`, `additionalDetails`, `labelNumber`)VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
-            
-            ps.setString(1, name);
-            ps.setString(2, surName);
-            ps.setString(3, adres);
-            ps.setString(4, pCode);
-            ps.setString(5, stad);
-            ps.setString(6, rAdres);
-            ps.setString(7, kleur);
-            ps.setString(8, vorm);
-            ps.setString(9, aDetails);
-            ps.setString(10, label);
-            
-            ps.executeUpdate();
-            
-            dispose();
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        } finally {
-
-            try {
-
-                if (con != null) {
-                    con.close();
-                }
-                
-                if(ps != null){
-                    ps.close();
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        } 
+        dispose();
     }//GEN-LAST:event_saveButtonActionPerformed
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
@@ -322,20 +258,20 @@ public class AddPassenger extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AddPassenger.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addPassenger.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AddPassenger.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addPassenger.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AddPassenger.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addPassenger.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AddPassenger.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addPassenger.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AddPassenger().setVisible(true);
+                new addPassenger().setVisible(true);
             }
         });
     }

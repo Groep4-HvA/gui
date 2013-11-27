@@ -2,9 +2,8 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package popups;
+package guiluggage;
 
-import java.awt.Color;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 
@@ -12,14 +11,13 @@ import java.awt.event.WindowEvent;
  *
  * @author workplz
  */
-public class PasswordConfirm extends javax.swing.JDialog {
+public class passwordConfirm extends javax.swing.JDialog {
 
     /**
-     * Creates new form PasswordConfirm
+     * Creates new form passwordConfirm
      */
-    public PasswordConfirm(java.awt.Frame parent, boolean modal) {
+    public passwordConfirm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
-        this.setUndecorated(true);
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -43,7 +41,6 @@ public class PasswordConfirm extends javax.swing.JDialog {
         cancelBut = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setText("Language: ");
 
@@ -51,7 +48,18 @@ public class PasswordConfirm extends javax.swing.JDialog {
 
         jLabel3.setText("Confirm password: ");
 
+        password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordActionPerformed(evt);
+            }
+        });
+
         dropDown.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "English", "Nederlands" }));
+        dropDown.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dropDownActionPerformed(evt);
+            }
+        });
 
         saveBut.setText("Save");
 
@@ -86,7 +94,7 @@ public class PasswordConfirm extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(passwordConfirm)
-                            .addComponent(password)
+                            .addComponent(password, javax.swing.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
                             .addComponent(dropDown, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -115,14 +123,22 @@ public class PasswordConfirm extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void dropDownActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dropDownActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dropDownActionPerformed
+
+    private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordActionPerformed
+
     private void cancelButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButActionPerformed
-        close();
+        close();        // TODO add your handling code here:
     }//GEN-LAST:event_cancelButActionPerformed
     
     public void close(){
         WindowEvent winClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(winClosingEvent);
-        dispose();
+        
     }
     /**
      * @param args the command line arguments
@@ -141,25 +157,23 @@ public class PasswordConfirm extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PasswordConfirm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(passwordConfirm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PasswordConfirm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(passwordConfirm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PasswordConfirm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(passwordConfirm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PasswordConfirm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(passwordConfirm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
             public void run() {
-                PasswordConfirm dialog = new PasswordConfirm(new javax.swing.JFrame(), true);
+                passwordConfirm dialog = new passwordConfirm(new javax.swing.JFrame(), true);
                 dialog.setLocationRelativeTo(null);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     
-                    @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
                         System.exit(0);
                     }

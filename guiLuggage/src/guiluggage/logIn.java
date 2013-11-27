@@ -5,6 +5,7 @@
 package guiluggage;
 
 import java.util.Arrays;
+import javax.swing.UIManager;
 
 /**
  *
@@ -17,6 +18,7 @@ public class logIn extends javax.swing.JFrame {
      * Creates new form logIn
      */
     public logIn() {
+        super("Login");
         initComponents();
         userName.requestFocusInWindow();
         getRootPane().setDefaultButton(LogIn);
@@ -183,7 +185,6 @@ public class logIn extends javax.swing.JFrame {
                 new logIn().setVisible(true);
 
             }
-
         });
 
     }

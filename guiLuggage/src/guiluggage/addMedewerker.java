@@ -2,37 +2,21 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package popups;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import javax.swing.JOptionPane;
+package guiluggage;
 
 /**
  *
  * @author Yorick
  */
-public class AddMedewerker extends javax.swing.JFrame {
-
-    private Connection con = null;
-    private Statement st = null;
-    private PreparedStatement ps = null;
-    private ResultSet rs = null;
-    private String url = "jdbc:mysql://159.253.0.5:3306/seanmoy58_hva";
-    private String user = "seanmoy58_hva";
-    private String pw = "cWCl7Itb";
+public class addMedewerker extends javax.swing.JFrame {
 
     /**
-     * Creates new form AddMedewerker
+     * Creates new form addMedewerker
      */
-    public AddMedewerker() {
+    public addMedewerker() {
         initComponents();
     }
-    public static AddMedewerker form = new AddMedewerker();
-
+    public static addMedewerker form = new addMedewerker();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -63,30 +47,29 @@ public class AddMedewerker extends javax.swing.JFrame {
             }
         });
 
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("popups/Bundle"); // NOI18N
-        saveButton.setText(bundle.getString("AddMedewerker.saveButton.text")); // NOI18N
+        saveButton.setText("save");
         saveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveButtonActionPerformed(evt);
             }
         });
 
-        cancelButton.setText(bundle.getString("AddMedewerker.cancelButton.text")); // NOI18N
+        cancelButton.setText("cancel");
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelButtonActionPerformed(evt);
             }
         });
 
-        jCheckBox1.setText(bundle.getString("AddMedewerker.jCheckBox1.text")); // NOI18N
+        jCheckBox1.setText("Applicatie beheerder");
 
-        jLabel1.setText(bundle.getString("AddMedewerker.jLabel1.text")); // NOI18N
+        jLabel1.setText("Name");
 
-        jLabel2.setText(bundle.getString("AddMedewerker.jLabel2.text")); // NOI18N
+        jLabel2.setText("Username");
 
-        jLabel3.setText(bundle.getString("AddMedewerker.jLabel3.text")); // NOI18N
+        jLabel3.setText("Password");
 
-        jLabel4.setText(bundle.getString("AddMedewerker.jLabel4.text")); // NOI18N
+        jLabel4.setText("Confirm Password");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -157,41 +140,6 @@ public class AddMedewerker extends javax.swing.JFrame {
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
 
-        String name = jTextField1.getText();
-        String uName = jTextField2.getText();
-        String pWord = jPasswordField1.getText();
-        String confirmPWord = jPasswordField2.getText();
-
-        if (pWord == null ? confirmPWord == null : pWord.equals(confirmPWord)) {
-
-
-            int sysAdmin = 0;
-
-            if (jCheckBox1.isSelected()) {
-                sysAdmin = 1;
-            }
-
-            try {
-                con = DriverManager.getConnection(url, user, pw);
-                ps = con.prepareStatement("INSERT INTO `Users` (userRealName, userName, userPass, userBeheer) values (?, ?, ?, ?)");
-
-                ps.setString(1, name);
-                ps.setString(2, uName);
-                ps.setString(3, pWord);
-                ps.setInt(4, sysAdmin);
-
-                ps.executeUpdate();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "Passwords do not match");
-            // fixen dat scherm niet weggaat
-        }
-
-
-
-        dispose();
     }//GEN-LAST:event_saveButtonActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -215,13 +163,13 @@ public class AddMedewerker extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AddMedewerker.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addMedewerker.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AddMedewerker.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addMedewerker.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AddMedewerker.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addMedewerker.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AddMedewerker.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(addMedewerker.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 

@@ -2,34 +2,19 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package popups;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.PreparedStatement;
+package guiluggage;
 
 /**
  *
  * @author workplz
  */
 public class addLuggage extends javax.swing.JFrame {
-    
-    private Connection con = null;
-    private PreparedStatement ps = null;
-    private ResultSet rs = null;
-
-    private String url = "jdbc:mysql://159.253.0.5:3306/seanmoy58_hva";
-    private String user = "seanmoy58_hva";
-    private String pw = "cWCl7Itb";
 
     /**
      * Creates new form guiPopupDesign
      */
     public addLuggage() {
-        //super("Add luggage...");
         initComponents();
-       
     }
 
     /**
@@ -55,32 +40,28 @@ public class addLuggage extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
-        jComboBox1 = new javax.swing.JComboBox();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("guiluggage/Bundle"); // NOI18N
-        setTitle(bundle.getString("addLuggage.title")); // NOI18N
+        setTitle("New luggage");
 
-        java.util.ResourceBundle bundle1 = java.util.ResourceBundle.getBundle("popups/Bundle"); // NOI18N
-        label.setText(bundle1.getString("addLuggage.label.text")); // NOI18N
+        label.setText("Label:");
 
-        color.setText(bundle1.getString("addLuggage.color.text")); // NOI18N
+        color.setText("Color:");
 
-        shape.setText(bundle1.getString("addLuggage.shape.text")); // NOI18N
+        shape.setText("Shape: ");
 
-        storageLocation.setText(bundle1.getString("addLuggage.storageLocation.text")); // NOI18N
+        storageLocation.setText("Storage location: ");
 
-        adDetails.setText(bundle1.getString("addLuggage.adDetails.text")); // NOI18N
+        adDetails.setText("Additional details: ");
 
-        Save.setText(bundle1.getString("addLuggage.Save.text")); // NOI18N
+        Save.setText("Save");
         Save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SaveActionPerformed(evt);
             }
         });
 
-        cancel.setText(bundle1.getString("addLuggage.cancel.text")); // NOI18N
+        cancel.setText("Cancel");
         cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelActionPerformed(evt);
@@ -95,17 +76,6 @@ public class addLuggage extends javax.swing.JFrame {
         jTextArea2.setRows(5);
         jScrollPane2.setViewportView(jTextArea2);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Missing", "Resolved" }));
-        jComboBox1.setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
-        jComboBox1.setMinimumSize(new java.awt.Dimension(6, 20));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText(bundle1.getString("addLuggage.jLabel1.text")); // NOI18N
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -113,39 +83,30 @@ public class addLuggage extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addComponent(label)
+                    .addComponent(color)
+                    .addComponent(shape)
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label)
-                            .addComponent(color)
-                            .addComponent(shape)
+                            .addComponent(adDetails)
+                            .addComponent(storageLocation))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(adDetails)
-                                    .addComponent(storageLocation))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
-                                    .addComponent(jScrollPane2))))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(Save)
-                        .addGap(18, 18, 18)
-                        .addComponent(cancel)
-                        .addGap(3, 3, 3))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(61, 61, 61)
-                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())))
+                                .addComponent(Save)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(cancel))
+                            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
+                            .addComponent(jScrollPane2))
+                        .addGap(3, 3, 3))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(label)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -165,15 +126,11 @@ public class addLuggage extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(adDetails)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Save)
-                    .addComponent(cancel))
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cancel)
+                    .addComponent(Save))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -184,48 +141,8 @@ public class addLuggage extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelActionPerformed
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
-       String label = jTextField1.getText();
-       String color = jTextField2.getText();
-       String shape = jTextField3.getText();
-       String sLocation = jTextArea1.getText();
-       String aDetails = jTextArea2.getText();
-       
-       String status = (String) jComboBox1.getSelectedItem();
-       int stat = 0;
-       
-       if("Missing".equalsIgnoreCase(status)){
-           stat = 0;
-       }
-       
-       if("Resolved".equalsIgnoreCase(status)){
-           stat = 1;
-       }
-       
-       
-       try{
-           
-           con = DriverManager.getConnection(url, user, pw);
-           ps = con.prepareStatement("INSERT INTO `seanmoy58_hva`.`luggage` (`labelNumber` ,`color` ,`shape` ,`storageLocation` ,`additionalDetails`,`status`)VALUES (?, ?, ?, ?, ?,?)");
-           
-           ps.setString(1, label);
-           ps.setString(2, color);
-           ps.setString(3, shape);
-           ps.setString(4, sLocation);
-           ps.setString(5, aDetails);
-           ps.setInt(6, stat);
-           
-           ps.executeUpdate();
-           
-           dispose();
-           
-       }catch(Exception e){
-           e.printStackTrace();
-       }
+       dispose();
     }//GEN-LAST:event_SaveActionPerformed
-
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -261,8 +178,6 @@ public class addLuggage extends javax.swing.JFrame {
     public javax.swing.JLabel adDetails;
     public javax.swing.JButton cancel;
     public javax.swing.JLabel color;
-    public javax.swing.JComboBox jComboBox1;
-    public javax.swing.JLabel jLabel1;
     public javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JTextArea jTextArea1;
