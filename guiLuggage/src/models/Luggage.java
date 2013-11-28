@@ -117,6 +117,11 @@ public class Luggage {
         this.details = details;
 >>>>>>> origin/hf
     }
+
+    @Override
+    public String toString() {
+        return "Luggage{" + "labelField=" + labelField + ", colorField=" + colorField + ", shapeField=" + shapeField + ", storageLocation=" + storageLocation + ", additionalDetails=" + additionalDetails + '}';
+    }
     
     
 }
