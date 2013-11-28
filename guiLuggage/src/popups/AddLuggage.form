@@ -4,7 +4,7 @@
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="title" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-      <ResourceString bundle="guiluggage/Bundle.properties" key="addLuggage.title" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
+      <ResourceString bundle="guiluggage/Bundle.properties" key="AddLuggage.title" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
     </Property>
   </Properties>
   <SyntheticProperties>
@@ -29,13 +29,13 @@
           <Group type="102" attributes="0">
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="label" min="-2" max="-2" attributes="0"/>
-                  <Component id="color" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="shape" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelLabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="colorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="shapeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="adDetails" min="-2" max="-2" attributes="0"/>
-                          <Component id="storageLocation" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="adDetailsLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="storageLocationLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -44,9 +44,9 @@
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="cancel" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="labelField" alignment="1" max="32767" attributes="0"/>
-                          <Component id="colorField" alignment="1" max="32767" attributes="0"/>
-                          <Component id="shapeField" alignment="1" max="32767" attributes="0"/>
+                          <Component id="labelTextField" alignment="1" max="32767" attributes="0"/>
+                          <Component id="colorTextField" alignment="1" max="32767" attributes="0"/>
+                          <Component id="shapeTextField" alignment="1" max="32767" attributes="0"/>
                           <Component id="jScrollPane1" alignment="1" pref="289" max="32767" attributes="0"/>
                           <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
                       </Group>
@@ -61,27 +61,27 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="label" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="labelField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelTextField" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="color" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="colorField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="colorLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="colorTextField" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="shape" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="shapeField" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="shapeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="shapeTextField" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                  <Component id="storageLocation" min="-2" max="-2" attributes="0"/>
+                  <Component id="storageLocationLabel" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="adDetails" min="-2" max="-2" attributes="0"/>
+                  <Component id="adDetailsLabel" min="-2" max="-2" attributes="0"/>
                   <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -95,45 +95,45 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="label">
+    <Component class="javax.swing.JLabel" name="labelLabel">
       <Properties>
         <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-          <ResourceString bundle="popups/Bundle.properties" key="addLuggage.label.text" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
+          <ResourceString bundle="popups/Bundle.properties" key="AddLuggage.labelLabel.text" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="color">
+    <Component class="javax.swing.JLabel" name="colorLabel">
       <Properties>
         <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-          <ResourceString bundle="popups/Bundle.properties" key="addLuggage.color.text" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
+          <ResourceString bundle="popups/Bundle.properties" key="AddLuggage.colorLabel.text" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="shape">
+    <Component class="javax.swing.JLabel" name="shapeLabel">
       <Properties>
         <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-          <ResourceString bundle="popups/Bundle.properties" key="addLuggage.shape.text" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
+          <ResourceString bundle="popups/Bundle.properties" key="AddLuggage.shapeLabel.text" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="storageLocation">
+    <Component class="javax.swing.JLabel" name="storageLocationLabel">
       <Properties>
         <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-          <ResourceString bundle="popups/Bundle.properties" key="addLuggage.storageLocation.text" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
+          <ResourceString bundle="popups/Bundle.properties" key="AddLuggage.storageLocationLabel.text" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="adDetails">
+    <Component class="javax.swing.JLabel" name="adDetailsLabel">
       <Properties>
         <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-          <ResourceString bundle="popups/Bundle.properties" key="addLuggage.adDetails.text" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
+          <ResourceString bundle="popups/Bundle.properties" key="AddLuggage.adDetailsLabel.text" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
         </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="Save">
       <Properties>
         <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-          <ResourceString bundle="popups/Bundle.properties" key="addLuggage.Save.text" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
+          <ResourceString bundle="popups/Bundle.properties" key="AddLuggage.Save.text" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
         </Property>
       </Properties>
       <Events>
@@ -143,18 +143,18 @@
     <Component class="javax.swing.JButton" name="cancel">
       <Properties>
         <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-          <ResourceString bundle="popups/Bundle.properties" key="addLuggage.cancel.text" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
+          <ResourceString bundle="popups/Bundle.properties" key="AddLuggage.cancel.text" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
         </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cancelActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="labelField">
+    <Component class="javax.swing.JTextField" name="labelTextField">
     </Component>
-    <Component class="javax.swing.JTextField" name="colorField">
+    <Component class="javax.swing.JTextField" name="colorTextField">
     </Component>
-    <Component class="javax.swing.JTextField" name="shapeField">
+    <Component class="javax.swing.JTextField" name="shapeTextField">
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>
@@ -163,7 +163,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTextArea" name="storageLocationField">
+        <Component class="javax.swing.JTextArea" name="locationTextField">
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
@@ -178,7 +178,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTextArea" name="additionalDetailsField">
+        <Component class="javax.swing.JTextArea" name="detailsTextField">
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
