@@ -241,9 +241,9 @@ public class Manager extends java.awt.Frame {
     }//GEN-LAST:event_processedManagerActionPerformed
 
     private void graphManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graphManagerActionPerformed
-        ManagerGraph showGraph = new ManagerGraph(beheer);
-        //showGraph.setVisible(true);
-        //dispose();
+        ManagerGraph showGraph = new ManagerGraph("Halloooo", beheer);
+        showGraph.setVisible(true);
+        dispose();
     }//GEN-LAST:event_graphManagerActionPerformed
 
     private void printButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printButtonActionPerformed
