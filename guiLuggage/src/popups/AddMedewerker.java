@@ -4,7 +4,11 @@
  */
 package popups;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import models.Medewerker;
+import models.MedewerkerDAO;
 
 /**
  *
@@ -156,7 +160,13 @@ public class AddMedewerker extends javax.swing.JFrame {
         appManager = appManagerCheckBox.isSelected();
         
         nieuweMedewerker = new Medewerker(name, username, password, appManager);
-        
+        MedewerkerDAO test = new MedewerkerDAO();
+        try {
+            test.create(nieuweMedewerker);
+        } catch (Exception ex) {
+            //System.out.println("sssss");
+            ex.printStackTrace();
+        }
         System.out.print("");
     }//GEN-LAST:event_saveButtonActionPerformed
 

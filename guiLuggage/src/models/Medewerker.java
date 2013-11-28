@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 package models;
-
+import org.apache.commons.codec.digest.DigestUtils;
 /**
  *
  * @author ChrisvanderHeijden
@@ -12,22 +12,24 @@ public class Medewerker {
     private String name;
     private String username;
     private boolean appManager;
-    private char[] password;
-    private char[] confirmPassword;
+    private String password;
+    private String userLang;
+    public Medewerker() {
+    }
 
     public Medewerker(String name, String username, char[] password, boolean appManager) {
         this.name = name;
         this.username = username;
         this.appManager = appManager;
-        this.password = password;
-        this.confirmPassword = confirmPassword;
+        this.password =  DigestUtils.sha1Hex(String.valueOf(password));
+        this.userLang = "EN";
     }
 
     public Medewerker(String name, String username, char[] password) {
         this.name = name;
         this.username = username;
-        this.password = password;
-        this.confirmPassword = confirmPassword;
+        this.password = DigestUtils.sha1Hex(String.valueOf(password));
+        this.userLang = "EN";
     }
 
     public String getName() {
@@ -54,20 +56,26 @@ public class Medewerker {
         this.appManager = appManager;
     }
 
-    public char[] getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(char[] password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
-    public char[] getConfirmPassword() {
-        return confirmPassword;
+    public String getUserLang() {
+        return userLang;
     }
 
-    public void setConfirmPassword(char[] confirmPassword) {
-        this.confirmPassword = confirmPassword;
+    public void setUserLang(String userLang) {
+        this.userLang = userLang;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Medewerker{" + "name=" + name + ", username=" + username + ", appManager=" + appManager + ", password=" + password +  '}';
     }
     
     
