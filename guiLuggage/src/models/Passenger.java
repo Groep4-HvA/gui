@@ -15,21 +15,25 @@ public class Passenger {
     private String name;
     private String surname;
     private String adres;
-    private String residentAdres;
     private String postalCode;
     private String city;
+    private String residentAdres;
+    private String residentPostalCode;
+    private String residentCity;
     private String details;
 
-    public Passenger(String label, String color, String shape, String name, String surname, String adres, String residentAdres, String postalCode, String city, String details) {
+    public Passenger(String label, String color, String shape, String name, String surname, String adres, String postalCode, String city, String residentAdres, String residentPostalCode, String residentCity, String details) {
         this.label = label;
         this.color = color;
         this.shape = shape;
         this.name = name;
         this.surname = surname;
         this.adres = adres;
-        this.residentAdres = residentAdres;
         this.postalCode = postalCode;
         this.city = city;
+        this.residentAdres = residentAdres;
+        this.residentPostalCode = residentPostalCode;
+        this.residentCity = residentCity;
         this.details = details;
     }
 
@@ -81,14 +85,6 @@ public class Passenger {
         this.adres = adres;
     }
 
-    public String getResidentAdres() {
-        return residentAdres;
-    }
-
-    public void setResidentAdres(String residentAdres) {
-        this.residentAdres = residentAdres;
-    }
-
     public String getPostalCode() {
         return postalCode;
     }
@@ -103,6 +99,30 @@ public class Passenger {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public String getResidentAdres() {
+        return residentAdres;
+    }
+
+    public void setResidentAdres(String residentAdres) {
+        this.residentAdres = residentAdres;
+    }
+
+    public String getResidentPostalCode() {
+        return residentPostalCode;
+    }
+
+    public void setResidentPostalCode(String residentPostalCode) {
+        this.residentPostalCode = residentPostalCode;
+    }
+
+    public String getResidentCity() {
+        return residentCity;
+    }
+
+    public void setResidentCity(String residentCity) {
+        this.residentCity = residentCity;
     }
 
     public String getDetails() {
