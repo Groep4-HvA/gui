@@ -4,16 +4,24 @@
  */
 package popups;
 
+import models.Luggage;
+
 /**
  *
  * @author workplz
  */
-public class addLuggage extends javax.swing.JFrame {
+public class AddLuggage extends javax.swing.JFrame {
 
+    private String label;
+    private String color;
+    private String shape;
+    private String location;
+    private String details;
+    
     /**
      * Creates new form guiPopupDesign
      */
-    public addLuggage() {
+    public AddLuggage() {
         initComponents();
     }
 
@@ -26,57 +34,57 @@ public class addLuggage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        label = new javax.swing.JLabel();
-        color = new javax.swing.JLabel();
-        shape = new javax.swing.JLabel();
-        storageLocation = new javax.swing.JLabel();
-        adDetails = new javax.swing.JLabel();
+        labelLabel = new javax.swing.JLabel();
+        colorLabel = new javax.swing.JLabel();
+        shapeLabel = new javax.swing.JLabel();
+        storageLocationLabel = new javax.swing.JLabel();
+        adDetailsLabel = new javax.swing.JLabel();
         Save = new javax.swing.JButton();
         cancel = new javax.swing.JButton();
-        labelField = new javax.swing.JTextField();
-        colorField = new javax.swing.JTextField();
-        shapeField = new javax.swing.JTextField();
+        labelTextField = new javax.swing.JTextField();
+        colorTextField = new javax.swing.JTextField();
+        shapeTextField = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        storageLocationField = new javax.swing.JTextArea();
+        locationTextField = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
-        additionalDetailsField = new javax.swing.JTextArea();
+        detailsTextField = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("guiluggage/Bundle"); // NOI18N
-        setTitle(bundle.getString("addLuggage.title")); // NOI18N
+        setTitle(bundle.getString("AddLuggage.title")); // NOI18N
 
         java.util.ResourceBundle bundle1 = java.util.ResourceBundle.getBundle("popups/Bundle"); // NOI18N
-        label.setText(bundle1.getString("addLuggage.label.text")); // NOI18N
+        labelLabel.setText(bundle1.getString("AddLuggage.labelLabel.text")); // NOI18N
 
-        color.setText(bundle1.getString("addLuggage.color.text")); // NOI18N
+        colorLabel.setText(bundle1.getString("AddLuggage.colorLabel.text")); // NOI18N
 
-        shape.setText(bundle1.getString("addLuggage.shape.text")); // NOI18N
+        shapeLabel.setText(bundle1.getString("AddLuggage.shapeLabel.text")); // NOI18N
 
-        storageLocation.setText(bundle1.getString("addLuggage.storageLocation.text")); // NOI18N
+        storageLocationLabel.setText(bundle1.getString("AddLuggage.storageLocationLabel.text")); // NOI18N
 
-        adDetails.setText(bundle1.getString("addLuggage.adDetails.text")); // NOI18N
+        adDetailsLabel.setText(bundle1.getString("AddLuggage.adDetailsLabel.text")); // NOI18N
 
-        Save.setText(bundle1.getString("addLuggage.Save.text")); // NOI18N
+        Save.setText(bundle1.getString("AddLuggage.Save.text")); // NOI18N
         Save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SaveActionPerformed(evt);
             }
         });
 
-        cancel.setText(bundle1.getString("addLuggage.cancel.text")); // NOI18N
+        cancel.setText(bundle1.getString("AddLuggage.cancel.text")); // NOI18N
         cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelActionPerformed(evt);
             }
         });
 
-        storageLocationField.setColumns(20);
-        storageLocationField.setRows(5);
-        jScrollPane1.setViewportView(storageLocationField);
+        locationTextField.setColumns(20);
+        locationTextField.setRows(5);
+        jScrollPane1.setViewportView(locationTextField);
 
-        additionalDetailsField.setColumns(20);
-        additionalDetailsField.setRows(5);
-        jScrollPane2.setViewportView(additionalDetailsField);
+        detailsTextField.setColumns(20);
+        detailsTextField.setRows(5);
+        jScrollPane2.setViewportView(detailsTextField);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -85,22 +93,22 @@ public class addLuggage extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label)
-                    .addComponent(color)
-                    .addComponent(shape)
+                    .addComponent(labelLabel)
+                    .addComponent(colorLabel)
+                    .addComponent(shapeLabel)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(adDetails)
-                            .addComponent(storageLocation))
+                            .addComponent(adDetailsLabel)
+                            .addComponent(storageLocationLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(Save)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(cancel))
-                            .addComponent(labelField, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(colorField, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(shapeField, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(labelTextField, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(colorTextField, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(shapeTextField, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
                             .addComponent(jScrollPane2))
                         .addGap(3, 3, 3))))
@@ -110,23 +118,23 @@ public class addLuggage extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label)
-                    .addComponent(labelField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelLabel)
+                    .addComponent(labelTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(color)
-                    .addComponent(colorField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(colorLabel)
+                    .addComponent(colorTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(shape)
-                    .addComponent(shapeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(shapeLabel)
+                    .addComponent(shapeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(storageLocation))
+                    .addComponent(storageLocationLabel))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(adDetails)
+                    .addComponent(adDetailsLabel)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,13 +145,22 @@ public class addLuggage extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    public static addLuggage form = new addLuggage();
+    public static AddLuggage form = new AddLuggage();
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
         dispose();
     }//GEN-LAST:event_cancelActionPerformed
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
-       dispose();
+        Luggage newLuggage;
+        label = labelTextField.getText();
+        color = colorTextField.getText();
+        shape = shapeTextField.getText();
+        location = locationTextField.getText();
+        details = detailsTextField.getText();
+        
+        newLuggage = new Luggage(label, color, shape, location, details);
+        
+        System.out.println(newLuggage.toString());
     }//GEN-LAST:event_SaveActionPerformed
 
     /**
@@ -163,7 +180,7 @@ public class addLuggage extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(addLuggage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddLuggage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -177,18 +194,18 @@ public class addLuggage extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton Save;
-    public javax.swing.JLabel adDetails;
-    public javax.swing.JTextArea additionalDetailsField;
+    public javax.swing.JLabel adDetailsLabel;
     public javax.swing.JButton cancel;
-    public javax.swing.JLabel color;
-    public javax.swing.JTextField colorField;
+    public javax.swing.JLabel colorLabel;
+    public javax.swing.JTextField colorTextField;
+    public javax.swing.JTextArea detailsTextField;
     public javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JScrollPane jScrollPane2;
-    public javax.swing.JLabel label;
-    public javax.swing.JTextField labelField;
-    public javax.swing.JLabel shape;
-    public javax.swing.JTextField shapeField;
-    public javax.swing.JLabel storageLocation;
-    public javax.swing.JTextArea storageLocationField;
+    public javax.swing.JLabel labelLabel;
+    public javax.swing.JTextField labelTextField;
+    public javax.swing.JTextArea locationTextField;
+    public javax.swing.JLabel shapeLabel;
+    public javax.swing.JTextField shapeTextField;
+    public javax.swing.JLabel storageLocationLabel;
     // End of variables declaration//GEN-END:variables
 }

@@ -9,6 +9,7 @@ package models;
  * @author ChrisvanderHeijden
  */
 public class Luggage {
+<<<<<<< HEAD
     private String labelField;
     private String colorField;
     private String shapeField;
@@ -61,6 +62,60 @@ public class Luggage {
 
     public void setAdditionalDetails(String additionalDetails) {
         this.additionalDetails = additionalDetails;
+=======
+    private String label;
+    private String color;
+    private String shape;
+    private String location;
+    private String details;
+
+    public Luggage(String label, String color, String shape, String location, String details) {
+        this.label = label;
+        this.color = color;
+        this.shape = shape;
+        this.location = location;
+        this.details = details;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getShape() {
+        return shape;
+    }
+
+    public void setShape(String shape) {
+        this.shape = shape;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
+>>>>>>> origin/hf
     }
     
     

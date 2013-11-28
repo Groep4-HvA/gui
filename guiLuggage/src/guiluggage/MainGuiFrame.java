@@ -6,7 +6,7 @@ package guiluggage;
 
 import popups.PasswordConfirm;
 import popups.Popupappmedewerker;
-import popups.addLuggage;
+import popups.AddLuggage;
 import popups.Advanced;
 import popups.AddMedewerker;
 import popups.AddPassenger;
@@ -325,7 +325,7 @@ public class MainGuiFrame extends java.awt.Frame {
     }//GEN-LAST:event_clickedButton2
 
     private void clickedButton1(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clickedButton1
-        addLuggage gui = new addLuggage();
+        AddLuggage gui = new AddLuggage();
         AddMedewerker gui2 = new AddMedewerker();
         if (inBeheer) {
             gui2.setVisible(true);
