@@ -7,6 +7,7 @@ package guiluggage;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Dimension;
+import javax.swing.JPanel;
 import models.printJob;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -24,7 +25,7 @@ import popups.PasswordConfirm;
  *
  * @author sean
  */
-public class Manager extends java.awt.Frame, ApplicationFrame
+public class Manager extends java.awt.Frame
 {
 
     private PasswordConfirm passOverlay = new PasswordConfirm(new javax.swing.JFrame(), true);
@@ -40,11 +41,18 @@ public class Manager extends java.awt.Frame, ApplicationFrame
     }
     public Manager(String title, boolean beheer, boolean graph){
         super(title);
+        beheer = this.beheer;
+        JPanel childPanel = new JPanel();
         final CategoryDataset dataset = createDataset();
         final JFreeChart chart = createChart(dataset);
         final ChartPanel chartPanel = new ChartPanel(chart);
         chartPanel.setPreferredSize(new Dimension(925, 418));
-        setContentPane(chartPanel);
+        chartPanel.setVisible(graph);
+        childPanel.add(chartPanel);
+        childPanel.setVisible(graph);
+        childPanel.setPreferredSize(new Dimension(925, 418));
+        System.out.print("Hallo");
+        initComponents();
     }
     /**
      * This method is called from within the constructor to initialize the form.
