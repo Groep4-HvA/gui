@@ -8,7 +8,7 @@ import java.util.ResourceBundle;
  * @author groep 4
  */
 public class GuiLuggage {
-    private static final ResourceBundle translation = ResourceBundle.getBundle("guiluggage/translation");
+//    private static final ResourceBundle translation = ResourceBundle.getBundle("guiluggage/translation");
 
     /**
      * @param args the command line arguments
