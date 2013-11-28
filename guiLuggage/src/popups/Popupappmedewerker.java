@@ -38,7 +38,7 @@ public class Popupappmedewerker extends javax.swing.JFrame {
         jPasswordField2 = new javax.swing.JPasswordField();
         jCheckBox1 = new javax.swing.JCheckBox();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("popups/Bundle"); // NOI18N
         jLabel1.setText(bundle.getString("Popupappmedewerker.jLabel1.text")); // NOI18N
