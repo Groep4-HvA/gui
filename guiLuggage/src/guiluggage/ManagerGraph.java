@@ -3,8 +3,7 @@ package guiluggage;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Dimension;
-import models.printJob;
-import popups.PasswordConfirm;
+
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -21,7 +20,7 @@ import org.jfree.ui.RefineryUtilities;
 public class ManagerGraph extends ApplicationFrame {
 
     
-    public ManagerGraph(final String title, boolean beheer) {
+    public ManagerGraph(final String title) {
         super(title);
         final CategoryDataset dataset = createDataset();
         final JFreeChart chart = createChart(dataset);
@@ -29,6 +28,7 @@ public class ManagerGraph extends ApplicationFrame {
         chartPanel.setPreferredSize(new Dimension(925, 418));
         setContentPane(chartPanel);
     }
+
 
     private CategoryDataset createDataset() {
         
@@ -149,39 +149,13 @@ public class ManagerGraph extends ApplicationFrame {
         return chart;
     }
 
-    private void printButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printButtonActionPerformed
-        new printJob();
-    }//GEN-LAST:event_printButtonActionPerformed
-    public void mainManager(){
-        Manager main = new Manager("HULP", true, true);
-        main.setVisible(true);
-        dispose();
-      }
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ManagerGraph("TEST",false).setVisible(true);
-                
-            }
-        });
+    public static void main(final String[] args) {
+
+        final ManagerGraph demo = new ManagerGraph("ManagerGraph");
+        demo.pack();
+        RefineryUtilities.centerFrameOnScreen(demo);
+        demo.setVisible(true);
+
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JFormattedTextField beginGraph;
-    private javax.swing.JFormattedTextField endGraph;
-    private javax.swing.JButton foundManager;
-    private javax.swing.JButton graphManager;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JButton logoutButton;
-    private javax.swing.JButton missingManager;
-    private javax.swing.JButton myAccountButton;
-    private javax.swing.JButton printButton;
-    private javax.swing.JButton processedManager;
-    private javax.swing.JButton showSelectedDate;
-    private javax.swing.JLabel till;
-    // End of variables declaration//GEN-END:variables
 }
