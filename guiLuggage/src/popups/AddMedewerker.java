@@ -4,6 +4,8 @@
  */
 package popups;
 
+import models.Medewerker;
+
 /**
  *
  * @author Yorick
@@ -146,11 +148,16 @@ public class AddMedewerker extends javax.swing.JFrame {
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
+        Medewerker nieuweMedewerker;
         name = nameTextField.getText();
         username = usernameTextField.getText();
         password = firstPasswordField.getPassword();
         confirmPassword = confirmPasswordField.getPassword();
         appManager = appManagerCheckBox.isSelected();
+        
+        nieuweMedewerker = new Medewerker(name, username, password, appManager);
+        
+        System.out.print("");
     }//GEN-LAST:event_saveButtonActionPerformed
 
     private void nameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTextFieldActionPerformed
