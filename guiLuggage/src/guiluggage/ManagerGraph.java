@@ -20,7 +20,7 @@ import org.jfree.ui.RefineryUtilities;
 public class ManagerGraph extends ApplicationFrame {
 
     
-    public ManagerGraph(final String title) {
+    public ManagerGraph(final String title, boolean beheer) {
         super(title);
         final CategoryDataset dataset = createDataset();
         final JFreeChart chart = createChart(dataset);
@@ -28,7 +28,6 @@ public class ManagerGraph extends ApplicationFrame {
         chartPanel.setPreferredSize(new Dimension(925, 418));
         setContentPane(chartPanel);
     }
-
 
     private CategoryDataset createDataset() {
         
@@ -151,7 +150,7 @@ public class ManagerGraph extends ApplicationFrame {
 
     public static void main(final String[] args) {
 
-        final ManagerGraph demo = new ManagerGraph("ManagerGraph");
+        final ManagerGraph demo = new ManagerGraph("ManagerGraph", false);
         demo.pack();
         RefineryUtilities.centerFrameOnScreen(demo);
         demo.setVisible(true);
