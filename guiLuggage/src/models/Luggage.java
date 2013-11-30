@@ -9,7 +9,8 @@ package models;
  * @author ChrisvanderHeijden
  */
 public class Luggage {
-<<<<<<< HEAD
+    
+}
     private String labelField;
     private String colorField;
     private String shapeField;
@@ -62,7 +63,7 @@ public class Luggage {
 
     public void setAdditionalDetails(String additionalDetails) {
         this.additionalDetails = additionalDetails;
-=======
+        
     private String label;
     private String color;
     private String shape;
