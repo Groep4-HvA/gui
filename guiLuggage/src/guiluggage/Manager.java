@@ -4,6 +4,8 @@
  */
 package guiluggage;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import models.printJob;
 import popups.PasswordConfirm;
 
@@ -33,10 +35,8 @@ public class Manager extends java.awt.Frame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        javax.swing.JButton moreButton = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tableResults = new javax.swing.JTable();
         myAccountButton = new javax.swing.JButton();
+        javax.swing.JButton moreButton = new javax.swing.JButton();
         logoutButton = new javax.swing.JButton();
         missingManager = new javax.swing.JButton();
         foundManager = new javax.swing.JButton();
@@ -50,6 +50,9 @@ public class Manager extends java.awt.Frame {
         jLabel4 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -58,30 +61,17 @@ public class Manager extends java.awt.Frame {
         });
 
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("guiluggage/Bundle"); // NOI18N
-        moreButton.setText(bundle.getString("Manager.moreButton.text")); // NOI18N
-        moreButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                moreButtonActionPerformed(evt);
-            }
-        });
-
-        tableResults.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"ASL19MNL", "found", "grey", "29/10/2013"},
-                {"ASL21FTR", "missing", "black", "4/11/2013"},
-                {"ASL9FUSA", "missing", "white", "1/11/2013"},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Label", "Status", "Color", "Date"
-            }
-        ));
-        jScrollPane3.setViewportView(tableResults);
-
         myAccountButton.setText(bundle.getString("Manager.myAccountButton.text")); // NOI18N
         myAccountButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 myAccountButtonActionPerformed(evt);
+            }
+        });
+
+        moreButton.setText(bundle.getString("Manager.moreButton.text")); // NOI18N
+        moreButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                moreButtonActionPerformed(evt);
             }
         });
 
@@ -139,6 +129,30 @@ public class Manager extends java.awt.Frame {
 
         jButton2.setText(bundle.getString("Manager.jButton2.text")); // NOI18N
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 928, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
+        );
+
         org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -152,33 +166,34 @@ public class Manager extends java.awt.Frame {
             .add(jPanel2Layout.createSequentialGroup()
                 .addContainerGap(35, Short.MAX_VALUE)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                    .add(jPanel2Layout.createSequentialGroup()
-                        .add(missingManager)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(foundManager)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(processedManager)
-                        .add(70, 70, 70)
-                        .add(jLabel1)
-                        .add(18, 18, 18)
-                        .add(jLabel2)
-                        .add(18, 18, 18)
-                        .add(jLabel3)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(graphManager))
-                    .add(jPanel2Layout.createSequentialGroup()
-                        .add(printButton)
-                        .add(215, 215, 215)
-                        .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(jLabel4)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(jTextField2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jButton2)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(moreButton))
-                    .add(org.jdesktop.layout.GroupLayout.LEADING, jScrollPane3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 928, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
+                        .add(jPanel2Layout.createSequentialGroup()
+                            .add(missingManager)
+                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                            .add(foundManager)
+                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                            .add(processedManager)
+                            .add(70, 70, 70)
+                            .add(jLabel1)
+                            .add(18, 18, 18)
+                            .add(jLabel2)
+                            .add(18, 18, 18)
+                            .add(jLabel3)
+                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .add(graphManager))
+                        .add(jPanel2Layout.createSequentialGroup()
+                            .add(printButton)
+                            .add(215, 215, 215)
+                            .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                            .add(jLabel4)
+                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                            .add(jTextField2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                            .add(jButton2)
+                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 368, Short.MAX_VALUE)
+                            .add(moreButton))))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -197,9 +212,9 @@ public class Manager extends java.awt.Frame {
                     .add(jLabel2)
                     .add(jLabel3)
                     .add(foundManager))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(18, 18, 18)
-                .add(jScrollPane3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(moreButton)
                     .add(printButton)
@@ -207,7 +222,7 @@ public class Manager extends java.awt.Frame {
                     .add(jLabel4)
                     .add(jTextField2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jButton2))
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         add(jPanel2, java.awt.BorderLayout.CENTER);
@@ -241,9 +256,15 @@ public class Manager extends java.awt.Frame {
     }//GEN-LAST:event_processedManagerActionPerformed
 
     private void graphManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graphManagerActionPerformed
-        ManagerGraph showGraph = new ManagerGraph("Halloooo", beheer);
-        showGraph.setVisible(true);
-        dispose();
+        //jPanel1.setVisible(false);
+        ManagerGraph graph = new ManagerGraph("Manager graph", true);
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        //graph.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+//        graph.setLocationRelativeTo(null);
+
+        
+        graph.setSize(600, 400);
+        graph.setVisible(true);
     }//GEN-LAST:event_graphManagerActionPerformed
 
     private void printButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printButtonActionPerformed
@@ -276,8 +297,10 @@ public class Manager extends java.awt.Frame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JButton logoutButton;
@@ -285,6 +308,5 @@ public class Manager extends java.awt.Frame {
     private javax.swing.JButton myAccountButton;
     private javax.swing.JButton printButton;
     private javax.swing.JButton processedManager;
-    private javax.swing.JTable tableResults;
     // End of variables declaration//GEN-END:variables
 }

@@ -25,8 +25,9 @@ public class ManagerGraph extends ApplicationFrame {
         final CategoryDataset dataset = createDataset();
         final JFreeChart chart = createChart(dataset);
         final ChartPanel chartPanel = new ChartPanel(chart);
-        chartPanel.setPreferredSize(new Dimension(925, 418));
+        //chartPanel.setPreferredSize(new Dimension(1366, 768));
         setContentPane(chartPanel);
+        
     }
 
 
@@ -149,13 +150,15 @@ public class ManagerGraph extends ApplicationFrame {
         return chart;
     }
 
-    public static void main(final String[] args) {
-
-        final ManagerGraph demo = new ManagerGraph("ManagerGraph", true);
-        demo.pack();
-        RefineryUtilities.centerFrameOnScreen(demo);
-        demo.setVisible(true);
-
-    }
+//    public static void main(final String[] args) {
+//
+//        final ManagerGraph demo = new ManagerGraph("ManagerGraph", true);
+//        demo.pack();
+//        //RefineryUtilities.centerFrameOnScreen(demo);
+//        demo.setLocationRelativeTo(null);
+//        demo.setVisible(true);
+//        
+//
+//    }
 
 }
